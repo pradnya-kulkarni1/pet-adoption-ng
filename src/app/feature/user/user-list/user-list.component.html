@@ -1,0 +1,51 @@
+<app-menu></app-menu>
+
+<div class = "user-list">
+    <section class = "heading">
+<span [style.color]='"brown"' class ="page-title font-weight-bold">{{ title }}</span>
+<a routerLink="/user/create">
+  <img width="20" height="20" src="assets/add-icon.png" title="Add New" />
+</a>
+</section>
+
+<table *ngIf="users" class = "table table-sm table-warning">
+  <thead>
+    <tr><th>Id</th><th>Firstname</th><th>Lastname</th><th>Phone</th><th>Email</th><th>Password</th><th>Action</th></tr>
+  </thead>
+
+<tbody>
+<tr *ngFor="let user of users">
+    <td>{{user.id}}</td>
+    <td>{{user.firstname}}</td>
+    <td>{{user.lastname}}</td>
+    <td>{{user.phone}}</td>
+    <td>{{user.email}}</td>
+    <td>{{user.password}}</td>
+    <td>
+      <a routerLink="/user/details/{{ user.id }}">
+        <img
+          width="20"
+          height="20"
+          src="assets/details.png"
+          title="User Details"
+        />
+      </a>
+      <a routerLink="/user/edit/{{ user.id }}">
+        <img
+          width="20"
+          height="20"
+          src="assets/pencil-icon.png"
+          title="Edit User"
+        />
+      </a>
+    </td>   
+</tr>
+</tbody>
+</table>
+</div>
+<img width="200" height = "200" src ="assets/dog-cat.jpg"/>
+<img width="200" height = "200" src ="assets/rabbit.jpg"/>
+<img width="200" height = "200" src ="assets/cute-puppies.jpg"/>
+<img width="200" height = "200" src ="assets/golden1.jpg"/>
+<img width="200" height = "200" src ="assets/golden2.jpg"/>
+<img width="200" height = "200" src ="assets/birdgreen.jpg"/>

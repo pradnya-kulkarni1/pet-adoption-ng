@@ -1,0 +1,52 @@
+div {
+    padding: 20px;
+}
+ body{
+
+    
+    background-size:82%;
+    height:100%;
+    width:100%;
+    background-color:cadetblue;
+    font-size:large;
+    font:bold;
+    
+    
+}
+.text{
+    font-style: normal;
+    text-decoration-color: bisque;
+}
+nav {
+	width:100%;
+	background-color: rgba(247, 236, 151, 0.75);
+	padding: 10px 0;
+
+}
+.h1 {
+	border:2px;
+    border-color:brown;
+	text-decoration:midnightblue;
+	padding: 10px;
+	font-family: Tahoma;
+    color:blueviolet;
+    width: 80%;
+    margin: 50px auto;
+    background: rgba(245, 227, 216, 0.75); /* Semi-transparent white background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(254, 253, 253, 0.723);
+    
+}
+.needPet{
+    color:darkgreen;
+    border:2px;
+    border-color:brown;
+    width: 50%;
+    margin: 50px auto;
+    background: rgba(245, 227, 216, 0.75); /* Semi-transparent white background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(240, 131, 131, 0.723);
+    
+}

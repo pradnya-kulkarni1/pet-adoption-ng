@@ -1,0 +1,45 @@
+<app-menu></app-menu>
+<div class = "species-list">
+    <section class = "heading">
+        <span [style.color]='"brown"' class ="page-title font-weight-bold">{{ title }}</span>
+        <a routerLink="/species/create">
+          <img width="20" height="20" src="assets/add-icon.png" title="Add New" />
+        </a>
+        </section>
+<table *ngIf="speciess" class = "table table-warning">
+    <thead>
+        <tr><th>Id</th><th>Name</th><th>Adoption Fee</th><th>Action</th></tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let s of speciess">
+            <td>{{s.id}}</td>
+            <td>{{s.name}}</td>
+            <td>{{s.adoptionFee}}</td>
+            <td>
+                <a routerLink="/species/details/{{ s.id }}">
+                  <img
+                    width="20"
+                    height="20"
+                    src="assets/details.png"
+                    title="Species Details"
+                  />
+                </a>
+                <a routerLink="/species/edit/{{ s.id }}">
+                  <img
+                    width="20"
+                    height="20"
+                    src="assets/pencil-icon.png"
+                    title="Edit Specie"
+                  />
+                </a>
+              </td> 
+        </tr>
+    </tbody>
+</table>
+</div>
+<img width="200" height = "200" src ="assets/dog-cat.jpg"/>
+<img width="200" height = "200" src ="assets/rabbit.jpg"/>
+<img width="200" height = "200" src ="assets/cute-puppies.jpg"/>
+<img width="200" height = "200" src ="assets/golden1.jpg"/>
+<img width="200" height = "200" src ="assets/golden2.jpg"/>
+<img width="200" height = "200" src ="assets/birdgreen.jpg"/>

@@ -1,0 +1,58 @@
+<app-menu></app-menu>
+<div class="customer-list">
+    <section class="heading">
+        <span [style.color]='"brown"' class ="page-title font-weight-bold">{{ title }}</span>
+        <a routerLink = "customer/create">
+            <img width="20" height="20" src="assets/add-icon.png" title="Add new"/>
+        </a>
+    </section>
+    <table *ngIf = "customers" class="table table-sm table-striped">
+
+        <thead>
+            <tr><th>Id</th><th>FirstName</th><th>LastName</th>
+            <th>Phone</th><th>Email</th><th>Address</th><th>City</th>
+            <th>State</th>
+            <th>Zip</th>
+            <th>Action</th></tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let c of customers">
+                <td>{{c.id}}</td>
+                <td>{{c.firstname}}</td>
+                <td>{{c.lastname}}</td>
+                <td>{{c.phone}}</td>
+                <td>{{c.email}}</td>
+                <td>{{c.address}}</td>
+                <td>{{c.city}}</td>
+                <td>{{c.state}}</td>
+                <td>{{c.zip}}</td>
+                <td>
+                    <a routerLink="/customer/details/{{ c.id }}">
+                      <img
+                        width="20"
+                        height="20"
+                        src="assets/details.png"
+                        title="Species Details"
+                      />
+                    </a>
+                    <a routerLink="/customer/edit/{{ c.id }}">
+                      <img
+                        width="20"
+                        height="20"
+                        src="assets/pencil-icon.png"
+                        title="Edit Specie"
+                      />
+                    </a>
+                  </td> 
+            </tr>
+        </tbody>
+</table>    
+</div>
+
+
+<img width="200" height = "200" src ="assets/dog-cat.jpg"/>
+<img width="200" height = "200" src ="assets/rabbit.jpg"/>
+<img width="200" height = "200" src ="assets/cute-puppies.jpg"/>
+<img width="200" height = "200" src ="assets/golden1.jpg"/>
+<img width="200" height = "200" src ="assets/golden2.jpg"/>
+<img width="200" height = "200" src ="assets/birdgreen.jpg"/>
