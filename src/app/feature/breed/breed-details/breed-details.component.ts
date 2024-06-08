@@ -39,8 +39,24 @@ export class BreedDetailsComponent implements OnInit {
     });
   }
 
-  delete(): void{
-    
-  }
+  delete(): void{this.breedSvc.deleteBreed(this.breedId).subscribe({
+    next: (resp) => {
+      if (resp == false) {
+        console.log('BreedDetailComponent - error deleting breed.');
+        this.message = 'BreedDetailComponent - error deleting breed.';
+      } else {
+        this.router.navigateByUrl('/breed/list');
+      }
+    },
+    error: (err) => {
+      console.log(
+        'BreedDetailComponent - Error deleting breed: ' + err.message
+      );
+      this.message =
+        'BreedDetailComponent - error deleting breed: ' + err.message;
+    },
+    complete: () => {},
+  });
+}
 
 }

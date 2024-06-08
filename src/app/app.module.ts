@@ -17,6 +17,15 @@ import { UserLoginComponent } from './feature/user-login/user-login.component';
 import { BreedDetailsComponent } from './feature/breed/breed-details/breed-details.component';
 import { BreedEditComponent } from './feature/breed/breed-edit/breed-edit.component';
 import { BreedCreateComponent } from './feature/breed/breed-create/breed-create.component';
+import { CustomerDetailsComponent } from './feature/customer/customer-details/customer-details.component';
+import { CustomerCreateComponent } from './feature/customer/customer-create/customer-create.component';
+import { CustomerEditComponent } from './feature/customer/customer-edit/customer-edit.component';
+import { SpeciesEditComponent } from './feature/species/species-edit/species-edit.component';
+import { SpeciesDetailsComponent } from './feature/species/species-details/species-details.component';
+import { SpeciesCreateComponent } from './feature/species/species-create/species-create.component';
+import { UserDetailsComponent } from './feature/user/user-details/user-details.component';
+import { UserEditComponent } from './feature/user/user-edit/user-edit.component';
+import { UserCreateComponent } from './feature/user/user-create/user-create.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +41,16 @@ import { BreedCreateComponent } from './feature/breed/breed-create/breed-create.
     UserLoginComponent,
     BreedDetailsComponent,
     BreedEditComponent,
-    BreedCreateComponent
+    BreedCreateComponent,
+    CustomerDetailsComponent,
+    CustomerCreateComponent,
+    CustomerEditComponent,
+    SpeciesEditComponent,
+    SpeciesDetailsComponent,
+    SpeciesCreateComponent,
+    UserDetailsComponent,
+    UserEditComponent,
+    UserCreateComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,57 @@
+<app-menu></app-menu>
+<div class = "user-edit">
+    <span [style.color]='"brown"' class="component-title">{{ title }}</span>
+    <p *ngIf="!user">Loading...</p>
+    <div *ngIf="user">
+      <main class="single">
+        <table class="table table-sm">
+          <tr>
+            <td>Id:</td>
+            <td>
+              <input [(ngModel)]="user.id" class="rounded" type="text" disabled/>
+            </td>
+          </tr>
+          <tr>
+            <td>Firstname:</td>
+            <td>
+              <input [(ngModel)]="user.firstname" class="rounded" type="text" />
+            </td>
+          </tr>
+          <tr>
+            <td>Lastname:</td>
+            <td>
+              <input [(ngModel)]="user.lastname" class="rounded" type="text" />
+            </td>
+          </tr>
+          <tr>
+            <td>Phone:</td>
+            <td>
+              <input [(ngModel)]="user.phone" class="rounded" type="text" />
+            </td>
+          </tr>
+          <tr>
+            <td>Email:</td>
+            <td>
+              <input [(ngModel)]="user.email" class="rounded" type="text" />
+            </td>
+          </tr>
+          <tr>
+            <td>Password:</td>
+            <td>
+              <input [(ngModel)]="user.password" class="rounded" type="text" />
+            </td>
+          </tr>
+        </table>
+      </main>
+      <span>
+        <button (click)="save()" class="btn btn-sm btn-primary">Save</button>
+      </span>
+      <p *ngIf="message">{{ message }}</p>
+    </div>
+  </div>
+  <img width="200" height = "200" src ="assets/dog-cat.jpg"/>
+<img width="200" height = "200" src ="assets/rabbit.jpg"/>
+<img width="200" height = "200" src ="assets/cute-puppies.jpg"/>
+<img width="200" height = "200" src ="assets/golden1.jpg"/>
+<img width="200" height = "200" src ="assets/golden2.jpg"/>
+<img width="200" height = "200" src ="assets/birdgreen.jpg"/>

@@ -1,30 +1,26 @@
 <app-menu></app-menu>
-<div class="breed-edit">
+<div class="species-edit">
     <span  [style.color]='"brown"' class="component-title">{{ title }}</span>
-    <p *ngIf="!breed">Loading...</p>
-    <div *ngIf="breed">
+    <p *ngIf="!species">Loading...</p>
+    <div *ngIf="species">
       <main class="single">
         <table class="table-sm">
           <tr>
             <td>Id:</td>
             <td>
-              <input [(ngModel)]="breed.id" class="rounded" type="text" disabled/>
-            </td>
-          </tr>
-          <tr>
-            <td>Breed Name:</td>
-            <td>
-              <select [(ngModel)]="breed.species.name" class="rounded">>
-                <option *ngFor="let s of speciess" [ngValue]="s.name">
-                  {{ s.name }}
-                </option>
-              </select>
+              <input [(ngModel)]="species.id" class="rounded" type="text" disabled/>
             </td>
           </tr>
           <tr>
             <td>Name:</td>
             <td>
-              <input [(ngModel)]="breed.name" class="rounded" type="text"/>
+              <input [(ngModel)]="species.name" class="rounded" type="text"/>
+            </td>
+          </tr>
+          <tr>
+            <td>Adoption Fee:</td>
+            <td>
+              <input [(ngModel)]="species.adoptionFee" class="rounded" type="number" />
             </td>
           </tr>
         </table>
@@ -35,7 +31,6 @@
     <p *ngIf="message">{{ message }}</p>
   </div>
 </div>
-
 <img width="200" height = "200" src ="assets/dog-cat.jpg"/>
 <img width="200" height = "200" src ="assets/rabbit.jpg"/>
 <img width="200" height = "200" src ="assets/cute-puppies.jpg"/>

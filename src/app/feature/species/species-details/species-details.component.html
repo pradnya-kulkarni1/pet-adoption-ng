@@ -1,15 +1,15 @@
 <app-menu></app-menu>
-<div  class="breed-detail">
+<div  class="species-detail">
     <span [style.color]='"brown"' class="component-title">{{ title }}</span>
-    <p *ngIf="!breed">Loading...</p>
-    <div *ngIf="breed">
+    <p *ngIf="!species">Loading...</p>
+    <div *ngIf="species">
       <main class="single">
         <table class="table table-sm">
           <tr>
             <td>Id:</td>
             <td>
               <input
-                [(ngModel)]="breed.id"
+                [(ngModel)]="species.id"
                 class="rounded"
                 type="text"
                 disabled
@@ -17,37 +17,42 @@
             </td>
           </tr>
           <tr>
-            <td>Specie Name:</td>
+            <td>Name:</td>
             <td>
-              <input [(ngModel)]="breed.species.name" class="rounded" type="text" disabled/>
+              <input
+                [(ngModel)]="species.name"
+                class="rounded"
+                type="text"
+                disabled
+              />
             </td>
           </tr>
           <tr>
-            <td>Name:</td>
+            <td>Adoption Fee:</td>
             <td>
-              <input [(ngModel)]="breed.name" class="rounded" type="text" disabled/>
+              <input
+                [(ngModel)]="species.adoptionFee"
+                class="rounded"
+                type="number"
+                disabled
+              />
             </td>
           </tr>
         </table>
     </main>
     <span>
-      <span
-        ><button routerLink="/breed/edit/{{ breed.id }}"
+        <button routerLink="/species/edit/{{ species.id }}"
           class="btn btn-sm btn-warning"
-          >Edit</button
-        ></span
-      >
+          >Edit</button>
+        </span>
       <span>
-        |
         <button (click)="delete()" class="btn btn-sm btn-danger">
           Delete
-        </button></span
-      >
+        </button>
     </span>
     <p *ngIf="message">{{ message }}</p>
   </div>
 </div>
-
 
 <img width="200" height = "200" src ="assets/dog-cat.jpg"/>
 <img width="200" height = "200" src ="assets/rabbit.jpg"/>

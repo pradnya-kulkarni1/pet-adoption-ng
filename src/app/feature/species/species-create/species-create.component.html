@@ -1,25 +1,21 @@
 <app-menu></app-menu>
-<div class="breed-create">
+<div class="species-create">
     <span [style.color]='"brown"' class="component-title">{{ title }}</span>
     
-    <p *ngIf="!breed">Loading...</p>
-    <div *ngIf="breed">
+    <p *ngIf="!species">Loading...</p>
+    <div *ngIf="species">
       <main class="single">
         <table class="table table-sm">
-            <tr>
-                <td>Specie:</td>
-                <td>
-                    <select [(ngModel)]="breed.species" class="rounded">
-                      <option *ngFor="let s of speciess" [ngValue]="s">
-                        {{ s.name }}
-                      </option>
-                    </select>
-                  </td>
-              </tr>
           <tr>
             <td>Name:</td>
             <td>
-              <input [(ngModel)]="breed.name" class="rounded" type="text" />
+              <input [(ngModel)]="species.name" class="rounded" type="text" />
+            </td>
+          </tr>
+          <tr>
+            <td>Adoption Fee:</td>
+            <td>
+              <input [(ngModel)]="species.adoptionFee" class="rounded" type="number" />
             </td>
           </tr>
         </table>

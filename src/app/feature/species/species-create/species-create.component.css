@@ -12,7 +12,7 @@ p.b {
   font-size:large;
   font-weight: 300;
 }
-.breed-edit {
+.species-create {
   width: 30%;
   margin: 50px auto;
   background: rgba(245, 227, 216, 0.75); /* Semi-transparent white background */

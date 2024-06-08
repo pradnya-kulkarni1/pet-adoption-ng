@@ -3,7 +3,7 @@ tr{
     text-align:center;
   }
   h1{
-    color:rgb(50, 50, 244);
+    color:rgb(154, 154, 246);
   }
   body{
     color:rgb(238, 197, 141);
@@ -18,6 +18,6 @@ tr{
     box-shadow: 0 4px 8px rgba(239, 228, 82, 0.723);
   }
   table, th, td {
-    border: 1px solid #25bcbc;
+    border: 1px solid #95f2f2;
   
   }
