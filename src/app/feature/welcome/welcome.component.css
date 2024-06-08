@@ -23,30 +23,42 @@ nav {
 	padding: 10px 0;
 
 }
-.h1 {
+h1 {
 	border:2px;
     border-color:brown;
-	text-decoration:midnightblue;
+	color:rgb(152, 152, 247);
+	padding: 10px;
+	font-family: Tahoma;
+    width: 50%;
+    margin: 50px auto;
+    background: rgba(249, 150, 235, 0.75); /* Semi-transparent white background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(231, 122, 122, 0.723);
+    
+}
+h2 {
+	border:2px;
+    border-color:brown;
 	padding: 10px;
 	font-family: Tahoma;
     color:blueviolet;
-    width: 80%;
+    width: 50%;
     margin: 50px auto;
-    background: rgba(245, 227, 216, 0.75); /* Semi-transparent white background */
+    background: rgba(143, 172, 247, 0.75); /* Semi-transparent white background */
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(254, 253, 253, 0.723);
+    box-shadow: 0 4px 8px rgba(231, 122, 122, 0.723);
     
 }
 .needPet{
-    color:darkgreen;
+    color:rgb(156, 5, 139);
     border:2px;
     border-color:brown;
     width: 50%;
     margin: 50px auto;
-    background: rgba(245, 227, 216, 0.75); /* Semi-transparent white background */
+    background: rgba(153, 240, 159, 0.75); /* Semi-transparent white background */
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 40px;
     box-shadow: 0 4px 8px rgba(240, 131, 131, 0.723);
-    
 }

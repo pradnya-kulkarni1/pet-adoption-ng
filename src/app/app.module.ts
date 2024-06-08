@@ -14,6 +14,9 @@ import { BreedListComponent } from './feature/breed/breed-list/breed-list.compon
 import { CustomerListComponent } from './feature/customer/customer-list/customer-list.component';
 import { ReferenceListComponent } from './feature/reference/reference-list/reference-list.component';
 import { UserLoginComponent } from './feature/user-login/user-login.component';
+import { BreedDetailsComponent } from './feature/breed/breed-details/breed-details.component';
+import { BreedEditComponent } from './feature/breed/breed-edit/breed-edit.component';
+import { BreedCreateComponent } from './feature/breed/breed-create/breed-create.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { UserLoginComponent } from './feature/user-login/user-login.component';
     BreedListComponent,
     CustomerListComponent,
     ReferenceListComponent,
-    UserLoginComponent
+    UserLoginComponent,
+    BreedDetailsComponent,
+    BreedEditComponent,
+    BreedCreateComponent
   ],
   imports: [
     BrowserModule,

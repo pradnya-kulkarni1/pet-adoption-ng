@@ -1,0 +1,45 @@
+<app-menu></app-menu>
+<div  class="breed-detail">
+    <span class="component-title">[{{ title }}]</span>
+    <p *ngIf="!breed">Loading...</p>
+    <div *ngIf="breed">
+      <main class="single">
+        <table class="table table-sm">
+          <tr>
+            <td>Id:</td>
+            <td>
+              <input
+                [(ngModel)]="breed.id"
+                class="rounded"
+                type="text"
+                disabled
+              />
+            </td>
+          </tr>
+        </table>
+    </main>
+    <span>
+      <span
+        ><button routerLink="/breed/edit/{{ breed.id }}"
+          class="btn btn-sm btn-warning"
+          >Edit</button
+        ></span
+      >
+      <span>
+        |
+        <button (click)="delete()" class="btn btn-sm btn-danger">
+          Delete
+        </button></span
+      >
+    </span>
+    <p *ngIf="message">{{ message }}</p>
+  </div>
+</div>
+
+
+<img width="200" height = "200" src ="assets/dog-cat.jpg"/>
+<img width="200" height = "200" src ="assets/rabbit.jpg"/>
+<img width="200" height = "200" src ="assets/cute-puppies.jpg"/>
+<img width="200" height = "200" src ="assets/golden1.jpg"/>
+<img width="200" height = "200" src ="assets/golden2.jpg"/>
+<img width="200" height = "200" src ="assets/birdgreen.jpg"/>

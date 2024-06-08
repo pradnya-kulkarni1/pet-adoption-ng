@@ -22,6 +22,6 @@ p.b {
   box-shadow: 0 4px 8px rgba(250, 129, 129, 0.723);
 }
 table, th, td {
-  border: 1px solid #fafefe;
+  border: 1px solid #ee369b;
   border-inline-end-color: brown;
 }

@@ -18,7 +18,7 @@ export class UserListComponent implements OnInit {
 
   ngOnInit(): void{
 
-    //this.systemSvc.checkLogin();
+    this.systemSvc.checkLogin();
 
     this.userSvc.getAllUsers().subscribe({
       next:(resp)=>{
