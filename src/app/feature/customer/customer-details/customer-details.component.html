@@ -1,1 +1,78 @@
-<p>customer-details works!</p>
+<app-menu></app-menu>
+<div class="customer-details">
+    <span [style.color]='"brown"' class="component-title">{{ title }}</span>
+    <p *ngIf="!customer">Loading...</p>
+    <div *ngIf="customer">
+      <main class="single">
+        <table class="table table-sm">
+          <tr>
+            <td>Id:</td>
+            <td>
+              <input [(ngModel)]="customer.id" class="rounded" type="text" disabled/>
+            </td>
+          </tr>
+          <tr>
+            <td>First Name:</td>
+            <td>
+              <input [(ngModel)]="customer.firstname" class="rounded" type="text" disabled/>
+            </td>
+          </tr>
+          <tr>
+            <td>Last name:</td>
+            <td>
+              <input [(ngModel)]="customer.lastname" class="rounded" type="text" disabled/>
+            </td>
+          </tr>
+          <tr>
+            <td>Phone:</td>
+            <td>
+              <input [(ngModel)]="customer.phone" class="rounded" type="text" disabled/>
+            </td>
+          </tr>
+          <tr>
+            <td>Email:</td>
+            <td>
+              <input [(ngModel)]="customer.email" class="rounded" type="text" disabled/>
+            </td>
+          </tr>
+          <tr>
+            <td>Address:</td>
+            <td>
+              <input [(ngModel)]="customer.address" class="rounded" type="text" disabled/>
+            </td>
+          </tr>
+          <tr>
+            <td>City:</td>
+            <td>
+              <input [(ngModel)]="customer.city" class="rounded" type="text" disabled/>
+            </td>
+          </tr>
+          <tr>
+            <td>State:</td>
+            <td>
+              <input [(ngModel)]="customer.state" class="rounded" type="text" disabled/>
+            </td>
+          </tr>
+          <tr>
+            <td>Zip:</td>
+            <td>
+              <input [(ngModel)]="customer.zip" class="rounded" type="text" disabled/>
+            </td>
+          </tr>
+        </table>
+      </main>
+      <span >
+        <span><button routerLink="/customer/edit/{{customer.id}}" class="btn btn-sm btn-warning">Edit</button></span>
+        <span> | <button (click)="delete()" class="btn btn-sm btn-danger">Delete</button></span>
+    </span>
+      <p *ngIf="message">{{ message }}</p>
+    </div>
+  </div>
+  
+
+<img width="200" height = "200" src ="assets/dog-cat.jpg"/>
+<img width="200" height = "200" src ="assets/rabbit.jpg"/>
+<img width="200" height = "200" src ="assets/cute-puppies.jpg"/>
+<img width="200" height = "200" src ="assets/golden1.jpg"/>
+<img width="200" height = "200" src ="assets/golden2.jpg"/>
+<img width="200" height = "200" src ="assets/birdgreen.jpg"/>

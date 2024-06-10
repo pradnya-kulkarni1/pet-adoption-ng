@@ -49,7 +49,7 @@ export class UserDetailsComponent implements OnInit {
           console.log('UserDetailComponent - error deleting user.');
           this.message = 'UserDetailComponent - error deleting user.';
         } else {
-          this.router.navigateByUrl('user/list');
+          this.router.navigateByUrl('/user/list');
         }
       },
       error: (err) => {

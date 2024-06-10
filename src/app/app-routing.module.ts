@@ -16,6 +16,12 @@ import { SpeciesEditComponent } from './feature/species/species-edit/species-edi
 import { UserCreateComponent } from './feature/user/user-create/user-create.component';
 import { UserDetailsComponent } from './feature/user/user-details/user-details.component';
 import { UserEditComponent } from './feature/user/user-edit/user-edit.component';
+import { CustomerCreateComponent } from './feature/customer/customer-create/customer-create.component';
+import { CustomerDetailsComponent } from './feature/customer/customer-details/customer-details.component';
+import { CustomerEditComponent } from './feature/customer/customer-edit/customer-edit.component';
+import { PetCreateComponent } from './feature/pet/pet-create/pet-create.component';
+import { PetDetailsComponent } from './feature/pet/pet-details/pet-details.component';
+import { PetEditComponent } from './feature/pet/pet-edit/pet-edit.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/home',pathMatch:'full'},
@@ -28,12 +34,18 @@ const routes: Routes = [
   {path:'species/details/:id',component:SpeciesDetailsComponent},
   {path:'species/edit/:id',component:SpeciesEditComponent},
   {path:'pet/list',component:PetListComponent},
+  {path:'pet/create',component:PetCreateComponent},
+  {path:'pet/details/:id',component:PetDetailsComponent},
+  {path:'pet/edit/:id',component:PetEditComponent},
   {path:'breed/list',component:BreedListComponent},
   {path:'breed/create',component:BreedCreateComponent},
   {path:'breed/details/:id',component:BreedDetailsComponent},
   {path:'breed/edit/:id',component:BreedEditComponent},
   {path:'pet/list',component:PetListComponent},
   {path:'customer/list',component:CustomerListComponent},
+  {path:'customer/create',component:CustomerCreateComponent},
+  {path:'customer/details/:id',component:CustomerDetailsComponent},
+  {path:'customer/edit/:id',component:CustomerEditComponent},
   {path:'user/login',component:UserLoginComponent},
   {path:'**',component:WelcomeComponent}
 

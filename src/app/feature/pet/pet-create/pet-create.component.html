@@ -1,0 +1,62 @@
+<app-menu></app-menu>
+<div class="pet-create">
+    <span [style.color]='"brown"' class="component-title">{{ title }}</span>
+    <p *ngIf="!pet">Loading...</p>
+    <div *ngIf="pet">
+      <main class="single">
+        <table class="table table-sm">
+          <tr>
+            <td>Breed:</td>
+            <td>
+                <select [(ngModel)]="pet.breed" class="rounded">
+                  <option *ngFor="let b of breeds" [ngValue]="b">
+                    {{ b.name }}
+                  </option>
+                </select>
+              </td>
+          </tr>
+          <tr>
+            <td>Name:</td>
+            <td>
+              <input [(ngModel)]="pet.name" class="rounded" type="text" />
+            </td>
+          </tr>
+          <tr>
+            <td>Gender:</td>
+            <td>
+              <input [(ngModel)]="pet.gender" class="rounded" type="text" />
+            </td>
+          </tr>
+          <tr>
+            <td>BirthYear:</td>
+            <td>
+              <input [(ngModel)]="pet.birthYear" class="rounded" type="number" />
+            </td>
+          </tr>
+          <tr>
+            <td>BirthMonth:</td>
+            <td>
+              <input [(ngModel)]="pet.birthMonth" class="rounded" type="text" />
+            </td>
+          </tr>
+          <tr>
+            <td>Available:</td>
+            <td>
+              <input [(ngModel)]="pet.available" class="rounded" type="checkbox" />
+            </td>
+          </tr>          
+        </table>
+      </main>
+      <span>
+        <button (click)="save()" class="btn btn-sm btn-primary">Save</button>
+      </span>
+      <p *ngIf="message">{{ message }}</p>
+    </div>
+  </div>
+
+<img width="200" height = "200" src ="assets/dog-cat.jpg"/>
+<img width="200" height = "200" src ="assets/rabbit.jpg"/>
+<img width="200" height = "200" src ="assets/cute-puppies.jpg"/>
+<img width="200" height = "200" src ="assets/golden1.jpg"/>
+<img width="200" height = "200" src ="assets/golden2.jpg"/>
+<img width="200" height = "200" src ="assets/birdgreen.jpg"/>

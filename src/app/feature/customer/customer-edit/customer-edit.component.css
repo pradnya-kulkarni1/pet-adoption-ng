@@ -1,0 +1,26 @@
+tr{
+    background: rgba(245, 242, 140, 0.75)
+  }
+    
+p.a{
+  font-family: Arial, Helvetica, sans-serif,Bold;
+  font-size:large;
+  font-weight: 300;
+}
+p.b {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:large;
+  font-weight: 300;
+}
+.customer-edit {
+  width: 30%;
+  margin: 50px auto;
+  background: rgba(245, 227, 216, 0.75); /* Semi-transparent white background */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(250, 129, 129, 0.723);
+}
+table, th, td {
+  border: 1px solid #e34d66;
+  border-inline-end-color: brown;
+}
