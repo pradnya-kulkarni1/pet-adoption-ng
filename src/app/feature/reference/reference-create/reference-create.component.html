@@ -1,0 +1,47 @@
+<app-menu></app-menu>
+<div class="reference-create">
+    <span [style.color]='"brown"' class="component-title">{{ title }}</span>
+    
+    <p *ngIf="!reference">Loading...</p>
+    <div *ngIf="reference">
+      <main class="single">
+        <table class="table table-sm">
+          <tr>
+            <td>Firstname:</td>
+            <td>
+              <input [(ngModel)]="reference.firstname" class="rounded" type="text" />
+            </td>
+          </tr>
+          <tr>
+            <td>Lastname:</td>
+            <td>
+              <input [(ngModel)]="reference.lastname" class="rounded" type="text" />
+            </td>
+          </tr>
+          <tr>
+            <td>Phone:</td>
+            <td>
+              <input [(ngModel)]="reference.phone" class="rounded" type="text" />
+            </td>
+          </tr>
+          <tr>
+            <td>Email:</td>
+            <td>
+              <input [(ngModel)]="reference.email" class="rounded" type="text" />
+            </td>
+          </tr>
+        </table>
+      </main>
+      <span>
+        <button (click)="save()" class="btn btn-sm btn-primary">Save</button>
+      </span>
+      <p *ngIf="message">{{ message }}</p>
+    </div>
+  </div>
+
+<img width="200" height = "200" src ="assets/dog-cat.jpg"/>
+<img width="200" height = "200" src ="assets/rabbit.jpg"/>
+<img width="200" height = "200" src ="assets/cute-puppies.jpg"/>
+<img width="200" height = "200" src ="assets/golden1.jpg"/>
+<img width="200" height = "200" src ="assets/golden2.jpg"/>
+<img width="200" height = "200" src ="assets/birdgreen.jpg"/>

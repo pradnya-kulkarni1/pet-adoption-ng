@@ -22,6 +22,9 @@ import { CustomerEditComponent } from './feature/customer/customer-edit/customer
 import { PetCreateComponent } from './feature/pet/pet-create/pet-create.component';
 import { PetDetailsComponent } from './feature/pet/pet-details/pet-details.component';
 import { PetEditComponent } from './feature/pet/pet-edit/pet-edit.component';
+import { AdoptionRequestComponent } from './feature/adoption/adoption-request/adoption-request.component';
+import { ReferenceCreateComponent } from './feature/reference/reference-create/reference-create.component';
+import { ReviewComponent } from './review/review/review.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/home',pathMatch:'full'},
@@ -47,6 +50,9 @@ const routes: Routes = [
   {path:'customer/details/:id',component:CustomerDetailsComponent},
   {path:'customer/edit/:id',component:CustomerEditComponent},
   {path:'user/login',component:UserLoginComponent},
+  {path:'adoption/request',component:AdoptionRequestComponent},
+  {path:'reference/create',component:ReferenceCreateComponent},
+  {path:'review/review',component: ReviewComponent},
   {path:'**',component:WelcomeComponent}
 
 ];

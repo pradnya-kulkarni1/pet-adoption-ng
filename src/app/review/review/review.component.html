@@ -1,0 +1,41 @@
+<app-menu></app-menu>>
+<div class = "review">
+    <section class ="heading">
+        <span [style.color]='"brown"' class="page title font-weight-bold">{{title}}</span>
+    </section>
+    <table class="table able-sm table-striped">
+        <thead>
+            <tr>
+            <th>Id</th>
+            <th>Customer</th>
+            <th>User</th>
+            <th>Pet</th>
+            <th>Status</th>
+            <th>Submitted Date</th>
+            <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let adoption of adoptions">
+                <td>{{adoption.id}}</td>
+                <td>{{adoption.customer.firstname +" "+ adoption.customer.lastname}}</td>
+                <td>{{adoption.user.firstname +" "+adoption.user.lastname}}</td>
+                <td>{{adoption.pet.name}}</td>
+                <td>{{adoption.status}}</td>
+                <td>{{adoption.submittedDate| date:'MM/dd/yyyy'}}</td>
+                <td>
+    
+                      <img width="20" height="20" src="assets/done.jpg" title="Approve/Reject" />
+                
+                  </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<img width="200" height = "200" src ="assets/dog-cat.jpg"/>
+<img width="200" height = "200" src ="assets/rabbit.jpg"/>
+<img width="200" height = "200" src ="assets/cute-puppies.jpg"/>
+<img width="200" height = "200" src ="assets/golden1.jpg"/>
+<img width="200" height = "200" src ="assets/golden2.jpg"/>
+<img width="200" height = "200" src ="assets/birdgreen.jpg"/>

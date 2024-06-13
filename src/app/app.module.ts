@@ -29,6 +29,9 @@ import { UserCreateComponent } from './feature/user/user-create/user-create.comp
 import { PetEditComponent } from './feature/pet/pet-edit/pet-edit.component';
 import { PetDetailsComponent } from './feature/pet/pet-details/pet-details.component';
 import { PetCreateComponent } from './feature/pet/pet-create/pet-create.component';
+import { AdoptionRequestComponent } from './feature/adoption/adoption-request/adoption-request.component';
+import { ReferenceCreateComponent } from './feature/reference/reference-create/reference-create.component';
+import { ReviewComponent } from './review/review/review.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +59,10 @@ import { PetCreateComponent } from './feature/pet/pet-create/pet-create.componen
     UserCreateComponent,
     PetEditComponent,
     PetDetailsComponent,
-    PetCreateComponent
+    PetCreateComponent,
+    AdoptionRequestComponent,
+    ReferenceCreateComponent,
+    ReviewComponent
   ],
   imports: [
     BrowserModule,

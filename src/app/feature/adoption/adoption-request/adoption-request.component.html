@@ -1,0 +1,74 @@
+<app-menu></app-menu>
+<div class = "adoption-request">
+    <span [style.color]='"brown"' class="component-title">{{ title }}</span>
+    
+    <main class = "single">
+<table class="table table-sm">
+    <tr>
+        <td>Old Customer :</td>
+        <td>
+            <select [(ngModel)] = "adoption.customer" class = "rounded">
+                <option *ngFor="let c of customers"[ngValue] = "c">
+                    {{c.email}}
+                </option>
+            </select>
+        </td>
+        <td>For New Customer</td>
+        <td>
+            <span>
+                <a routerLink="/customer/create" class ="btn btn-sm btn-warning">Add New</a>
+              </span>
+        </td>
+    </tr>
+    <tr>
+        <td>Pet :</td>
+        <td>
+            <select [(ngModel)] = "adoption.pet" class = "rounded">
+                <option *ngFor="let p of pets"[ngValue] = "p">
+                    {{p.name}}
+                </option>
+            </select>
+        </td>
+        <td>For New Customer</td>
+        <td>
+            <span>
+                <a routerLink="/customer/create" class ="btn btn-sm btn-warning">Add New</a>
+              </span>
+        </td>
+    </tr>
+    <tr>
+        <td>Reference 1:</td>
+        <td>
+            <select [(ngModel)] = "reference1" class = "rounded">
+                <option *ngFor="let r of references1"[ngValue] = "r">
+                    {{r.firstname+ " " +r.lastname}}
+                </option>
+            </select>
+        </td>
+        <td>For New Reference</td>
+        <td>
+            <span>
+                <a routerLink="/reference/create" class ="btn btn-sm btn-warning">Add New</a>
+              </span>
+        </td>
+    </tr>
+    <tr>
+        <td>Reference 2:</td>
+        <td>
+            <select [(ngModel)] = "reference2" class = "rounded">
+                <option *ngFor="let f of references2"[ngValue] = "f">
+                    {{f.firstname+ " " +f.lastname}}
+                </option>
+            </select>
+        </td>
+        <td>For New Reference</td>
+        <td>
+            <span>
+                <a routerLink="/reference/create" class ="btn btn-sm btn-warning">Add New</a>
+              </span>
+        </td>
+    </tr>
+</table>
+<span><button (click)="submit()"  class="btn btn-sm btn-warning">Submit</button></span>
+    </main>
+</div>
