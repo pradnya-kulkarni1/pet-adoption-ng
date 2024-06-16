@@ -33,6 +33,7 @@ export class AdoptionRequestComponent implements OnInit{
   customerId?: number = undefined;
   referenceId?: number = undefined;
   pets: Pet[] = [];
+  pet: Pet = new Pet();
  
   
 
@@ -47,6 +48,7 @@ export class AdoptionRequestComponent implements OnInit{
 
     this.sysSvc.checkLogin();
     this.adoption.user = this.sysSvc.loggedInUser;
+    
     this.custSvc.getAllCustomers().subscribe({
       next:(resp)=>{
         this.customers = resp;
@@ -56,9 +58,10 @@ export class AdoptionRequestComponent implements OnInit{
       },
       complete: ()=> {}
     });
-    this.petSvc.getAllPets().subscribe({
+    this.petSvc.getPetById(1).subscribe({
       next:(resp)=>{
-        this.pets = resp;
+        this.pet = resp;
+        this.adoption.pet = this.pet;
       },
       error:(err)=>{
         console.log(err);

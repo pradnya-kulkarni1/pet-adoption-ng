@@ -21,22 +21,6 @@
         </td>
     </tr>
     <tr>
-        <td>Pet :</td>
-        <td>
-            <select [(ngModel)] = "adoption.pet" class = "rounded">
-                <option *ngFor="let p of pets"[ngValue] = "p">
-                    {{p.name}}
-                </option>
-            </select>
-        </td>
-        <td>For New Customer</td>
-        <td>
-            <span>
-                <a routerLink="/customer/create" class ="btn btn-sm btn-warning">Add New</a>
-              </span>
-        </td>
-    </tr>
-    <tr>
         <td>Reference 1:</td>
         <td>
             <select [(ngModel)] = "reference1" class = "rounded">

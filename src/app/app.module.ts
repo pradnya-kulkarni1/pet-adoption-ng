@@ -32,6 +32,8 @@ import { PetCreateComponent } from './feature/pet/pet-create/pet-create.componen
 import { AdoptionRequestComponent } from './feature/adoption/adoption-request/adoption-request.component';
 import { ReferenceCreateComponent } from './feature/reference/reference-create/reference-create.component';
 import { ReviewComponent } from './review/review/review.component';
+import { AdoptComponent } from './adoption/adopt/adopt.component';
+import { AdoptionApproveComponent } from './adoption/adoption-approve/adoption-approve.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +64,9 @@ import { ReviewComponent } from './review/review/review.component';
     PetCreateComponent,
     AdoptionRequestComponent,
     ReferenceCreateComponent,
-    ReviewComponent
+    ReviewComponent,
+    AdoptComponent,
+    AdoptionApproveComponent
   ],
   imports: [
     BrowserModule,

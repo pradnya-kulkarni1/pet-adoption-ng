@@ -11,9 +11,12 @@ export class Adoption {
     rejectionReason:string;
     submittedDate: Date;
     adoptionCompletedDate= Date;
+    backgroundCheck: boolean;
+    referenceCheck: boolean;
 
     constructor(id = 0, customer = new Customer(), user = new User(), pet = new Pet(), status = '',
-     rejectionReason = '', submittedDate = new Date(), adoptionComlpetedDate = new Date()){
+     rejectionReason = '', submittedDate = new Date(), adoptionComlpetedDate = new Date(), backgroundCheck = false,
+   referenceCheck = false){
         this.id = id;
         this.customer = customer;
         this.user = user;
@@ -22,5 +25,7 @@ export class Adoption {
         this.rejectionReason = rejectionReason;
         this.submittedDate = submittedDate;
         this.adoptionCompletedDate = this.adoptionCompletedDate;
+        this.backgroundCheck = backgroundCheck;
+        this.referenceCheck = referenceCheck;
      }
 }

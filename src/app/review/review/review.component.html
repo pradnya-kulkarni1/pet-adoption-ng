@@ -9,9 +9,11 @@
             <th>Id</th>
             <th>Customer</th>
             <th>User</th>
-            <th>Pet</th>
             <th>Status</th>
             <th>Submitted Date</th>
+            <th>BackGround Check</th>
+            <th>Reference Check</th>
+            <th>Reason For Rejection</th>
             <th>Action</th>
             </tr>
         </thead>
@@ -20,14 +22,23 @@
                 <td>{{adoption.id}}</td>
                 <td>{{adoption.customer.firstname +" "+ adoption.customer.lastname}}</td>
                 <td>{{adoption.user.firstname +" "+adoption.user.lastname}}</td>
-                <td>{{adoption.pet.name}}</td>
                 <td>{{adoption.status}}</td>
                 <td>{{adoption.submittedDate| date:'MM/dd/yyyy'}}</td>
+            
                 <td>
-    
-                      <img width="20" height="20" src="assets/done.jpg" title="Approve/Reject" />
-                
-                  </td>
+                <input [(ngModel)]="adoption.backgroundCheck" class="rounded" type="checkbox" style="text-align:center" />
+                </td>
+                <td>
+                <input [(ngModel)]="adoption.referenceCheck" class ="rounded" type = "checkbox" style="text-align:center"/>
+                </td>
+                <td>
+                <input [(ngModel)]="adoption.rejectionReason" class="rounded" type="text"/>
+                </td>
+                <td>
+                <span><button routerLink="/adoption/aprove/{{adoption.id}}" class="reject"[disabled]="!adoption.rejectionReason.trim()" >Reject</button></span>
+                <span><button routerLink="/adoption/aprove/{{adoption.id}}"
+                    class="approve"[disabled]="!adoption.backgroundCheck || !adoption.referenceCheck">Approve</button></span>
+                </td>
             </tr>
         </tbody>
     </table>
