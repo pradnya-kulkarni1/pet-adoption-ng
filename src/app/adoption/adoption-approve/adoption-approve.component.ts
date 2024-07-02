@@ -28,13 +28,7 @@ export class AdoptionApproveComponent implements OnInit {
         this.adoptSvc.getAdoptionById(this.adoptionId).subscribe({
           next: (parms) => {
             this.adoption = parms;
-            console.log("rejectionReason = ",this.adoption.rejectionReason);
-            if(!this.adoption.rejectionReason){
-              this.approve();
-            }
-            else{
-              this.reject();
-            }
+          
       
           },
         });
@@ -51,40 +45,6 @@ export class AdoptionApproveComponent implements OnInit {
 
 
     
-      approve(): void {
-        console.log('id= ',this.adoption.id);
-     this.adoptSvc.approveAdoption(this.adoption.id).subscribe({
-       next: (resp) => {
-         this.adoption = resp;
-         console.log('approved adoption', this.adoption.status);
-         this.router.navigateByUrl('/review/review');
-       },
-       error: (err) => {
-         console.log("Error creating Adoption: ", err);
-         this.message = "Error creating Adoption.";
-       },
-       complete: () => {}
-     });
-   
-   
-   }
-   
-   reject(): void{
-     console.log("Adoption to reject Id"+this.adoption.id);
-     this.rejectionReason = this.adoption.rejectionReason;
-     this.adoptSvc.rejectAdoption(this.adoption.id, this.rejectionReason).subscribe({
-       next: (resp) => {
-         this.adoption = resp;
-         this.router.navigateByUrl('/review/review');
-       },
-       error: (err) => {
-         console.log("Error creating adoption: ", err);
-         this.message = "Error creating adoption.";
-       },
-       complete: () => {}
-     });
-   
-   }
     
   }
 

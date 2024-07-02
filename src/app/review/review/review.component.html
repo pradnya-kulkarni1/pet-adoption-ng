@@ -35,8 +35,8 @@
                 <input [(ngModel)]="adoption.rejectionReason" class="rounded" type="text"/>
                 </td>
                 <td>
-                <span><button routerLink="/adoption/aprove/{{adoption.id}}" class="reject"[disabled]="!adoption.rejectionReason.trim()" >Reject</button></span>
-                <span><button routerLink="/adoption/aprove/{{adoption.id}}"
+                <span><button (click)="approveOrReject(this.adoption.id,this.adoption.rejectionReason)" class="reject"[disabled]="!adoption.rejectionReason.trim()" >Reject</button></span>
+                <span><button (click)="approveOrReject(this.adoption.id,this.adoption.rejectionReason)"
                     class="approve"[disabled]="!adoption.backgroundCheck || !adoption.referenceCheck">Approve</button></span>
                 </td>
             </tr>

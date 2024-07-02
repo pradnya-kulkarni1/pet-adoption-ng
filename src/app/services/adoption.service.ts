@@ -19,6 +19,10 @@ export class AdoptionService {
   getAdoptionById(id:number):Observable<Adoption> {
     return this.http.get(URL + '/'+id) as Observable<Adoption>;
   }
+
+  getAllAdoptionForApprove():Observable<Adoption[]> {
+    return this.http.get(URL + '/approve') as Observable<Adoption[]>;
+  }
   
   createAdoption( Adoption:Adoption): Observable<Adoption>{
     return this.http.post(URL, Adoption) as Observable<Adoption>;
