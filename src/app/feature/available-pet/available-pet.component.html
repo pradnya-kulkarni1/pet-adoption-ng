@@ -1,0 +1,70 @@
+
+<app-menu></app-menu>
+<div class="available-pet">
+<div>
+    <span class="component-title">[{{ title }}]</span>
+      <main class="single">
+        <table class="table table-sm">
+            <thead>
+                <th>Choose one</th>
+                
+            </thead>
+            <tbody>
+              <tr>
+                <td>Species:</td>
+                <td>
+                  <select [(ngModel)]="selectedSpecies" (change)="getBreeds()" class="rounded">
+                    <option *ngFor="let s of speciess" [ngValue]="s">
+                      {{ s.name }}
+                </option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+                    <td>Breed:</td>
+                <td>
+                    <select [(ngModel)]="selectedBreed" (change)="getPets()"class="rounded">
+                    <option *ngFor="let b of breeds" [ngValue]="b">
+                      {{ b.name }}
+                    </option>
+                  </select>
+                </td>
+            </tr>
+            <tr>
+              <td>Pet:</td>
+          <td>
+              <select [(ngModel)]="selectedPet" class="rounded">
+              <option *ngFor="let p of pets" [ngValue]="p">
+                {{ p.name }}
+              </option>
+            </select>
+          </td>
+      </tr>
+      <tr>
+        <td>Select</td>
+        <td><span><button (click)="select()"  class="btn btn-sm btn-warning">Select</button></span></td>
+      </tr>
+      </tbody>
+      <div *ngIf="whenSelected">
+        <td>Pet Summary</td>
+        <table class="table table-sm">
+          <thead>
+            <td>Id</td>
+            <td>Name</td>
+            <td>Breed</td>
+            <td>Gender</td>
+            <td>Birth Year</td>
+            <td>Birth Month</td>
+          </thead>
+          <tbody>
+            <td>{{pet.id}}</td>
+            <td>{{pet.name}}</td>
+            <td>{{pet.breed.name}}</td>
+            <td>{{pet.gender}}</td>
+            <td>{{pet.birthYear}}</td>
+            <td>{{pet.birthMonth}}</td>
+          </tbody>
+        </table>
+      </div>
+      <div><span><button routerLink="/adoption-final"  class="btn btn-sm btn-warning">Adopt</button></span>
+      </div>

@@ -8,8 +8,9 @@ export class Pet {
     birthYear: number;
     birthMonth: number;
     available: boolean;
+    photoPath: string;
 
-    constructor( id=0, breed = new Breed(),name = '', gender = '', birthYear = 0, birthMonth = 0, available = false){
+    constructor( id=0, breed = new Breed(),name = '', gender = '', birthYear = 0, birthMonth = 0, available = false, photoPath = ''){
         this.id = id;
         this.breed = breed;
         this.name = name;
@@ -17,6 +18,7 @@ export class Pet {
         this.birthYear = birthYear;
         this.birthMonth = birthMonth;
         this.available = available;
+        this.photoPath = photoPath;
     }
 
 }

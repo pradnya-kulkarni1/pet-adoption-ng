@@ -27,6 +27,8 @@ import { ReferenceCreateComponent } from './feature/reference/reference-create/r
 import { ReviewComponent } from './review/review/review.component';
 import { AdoptComponent } from './adoption/adopt/adopt.component';
 import { AdoptionApproveComponent } from './adoption/adoption-approve/adoption-approve.component';
+import { AvailablePetComponent } from './feature/available-pet/available-pet.component';
+import { AdoptionFinalComponent } from './feature/adoption-final/adoption-final.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/home',pathMatch:'full'},
@@ -55,8 +57,10 @@ const routes: Routes = [
   {path:'adoption/request',component:AdoptionRequestComponent},
   {path:'reference/create',component:ReferenceCreateComponent},
   {path:'review/review',component: ReviewComponent},
+  {path:'available-pet', component:AvailablePetComponent},
   {path:'adoption/aprove/:id',component: AdoptionApproveComponent},
   {path:'adoption/adopt',component:AdoptComponent},
+  {path:'adoption-final',component:AdoptionFinalComponent},
   {path:'**',component:WelcomeComponent}
 
 ];

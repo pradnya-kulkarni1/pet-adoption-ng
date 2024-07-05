@@ -18,8 +18,13 @@ export class PetService {
   getAllPetForAdopt(): Observable<Pet[]>{
     return this.http.get(URL+'/available') as Observable<Pet[]>;
   }
+ 
   getPetById(id:number):Observable<Pet> {
     return this.http.get(URL + '/'+id) as Observable<Pet>;
+  }
+
+  getPetByBreeds(id: number): Observable<Pet[]>{
+    return this.http.get(URL+'/getPetsForBreeds/'+id) as Observable<Pet[]>;
   }
   
   createPet( Pet:Pet): Observable<Pet>{

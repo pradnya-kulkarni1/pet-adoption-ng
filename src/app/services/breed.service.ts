@@ -19,7 +19,9 @@ export class BreedService {
   getBreedById(id:number):Observable<Breed> {
     return this.http.get(URL + '/'+id) as Observable<Breed>;
   }
-  
+  getBreedsBySpecies(id:number):Observable<Breed[]> {
+    return this.http.get(URL + '/getBreedsForSpecies/'+id) as Observable<Breed[]>;
+  }
   createBreed( Breed:Breed): Observable<Breed>{
     return this.http.post(URL, Breed) as Observable<Breed>;
   }

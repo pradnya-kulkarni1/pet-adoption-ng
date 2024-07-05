@@ -34,6 +34,8 @@ import { ReferenceCreateComponent } from './feature/reference/reference-create/r
 import { ReviewComponent } from './review/review/review.component';
 import { AdoptComponent } from './adoption/adopt/adopt.component';
 import { AdoptionApproveComponent } from './adoption/adoption-approve/adoption-approve.component';
+import { AvailablePetComponent } from './feature/available-pet/available-pet.component';
+import { AdoptionFinalComponent } from './feature/adoption-final/adoption-final.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +68,9 @@ import { AdoptionApproveComponent } from './adoption/adoption-approve/adoption-a
     ReferenceCreateComponent,
     ReviewComponent,
     AdoptComponent,
-    AdoptionApproveComponent
+    AdoptionApproveComponent,
+    AvailablePetComponent,
+    AdoptionFinalComponent
   ],
   imports: [
     BrowserModule,
