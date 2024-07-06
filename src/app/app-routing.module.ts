@@ -57,7 +57,7 @@ const routes: Routes = [
   {path:'adoption/request',component:AdoptionRequestComponent},
   {path:'reference/create',component:ReferenceCreateComponent},
   {path:'review/review',component: ReviewComponent},
-  {path:'available-pet', component:AvailablePetComponent},
+  {path:'available-pet/:id', component:AvailablePetComponent},
   {path:'adoption/aprove/:id',component: AdoptionApproveComponent},
   {path:'adoption/adopt',component:AdoptComponent},
   {path:'adoption-final',component:AdoptionFinalComponent},

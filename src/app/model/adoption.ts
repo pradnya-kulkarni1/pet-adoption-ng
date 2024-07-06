@@ -10,13 +10,15 @@ export class Adoption {
     status:string;
     rejectionReason:string;
     submittedDate: Date;
-    adoptionCompletedDate= Date;
+    adoptionCompletedDate: Date;
     backgroundCheck: boolean;
     referenceCheck: boolean;
+    paperWorkCompleted: boolean;
+    paymentRecieved: boolean;
 
     constructor(id = 0, customer = new Customer(), user = new User(), pet = new Pet(), status = '',
-     rejectionReason = '', submittedDate = new Date(), adoptionComlpetedDate = new Date(), backgroundCheck = false,
-   referenceCheck = false){
+     rejectionReason = '', submittedDate = new Date(), adoptionCompletedDate = new Date(), backgroundCheck = false,
+   referenceCheck = false, paperWorkCompleted = false, paymentRecieved = false){
         this.id = id;
         this.customer = customer;
         this.user = user;
@@ -24,8 +26,10 @@ export class Adoption {
         this.status = status;
         this.rejectionReason = rejectionReason;
         this.submittedDate = submittedDate;
-        this.adoptionCompletedDate = this.adoptionCompletedDate;
+        this.adoptionCompletedDate = adoptionCompletedDate;
         this.backgroundCheck = backgroundCheck;
         this.referenceCheck = referenceCheck;
+        this.paperWorkCompleted = paperWorkCompleted;
+        this.paymentRecieved = paymentRecieved;
      }
 }

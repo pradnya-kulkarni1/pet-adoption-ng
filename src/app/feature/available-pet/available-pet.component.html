@@ -1,9 +1,21 @@
 
 <app-menu></app-menu>
+<span>
+  <div class="customer">
+    <tr>
+<td>For Customer</td>
+<td>{{adoption.customer.firstname}}</td>
+<td>User</td>
+<td>{{adoption.user.firstname}}</td>
+</tr>
+  </div>
+</span>
 <div class="available-pet">
 <div>
     <span class="component-title">[{{ title }}]</span>
       <main class="single">
+        <span class="adoption-details">
+          <div>      
         <table class="table table-sm">
             <thead>
                 <th>Choose one</th>
@@ -33,7 +45,7 @@
             <tr>
               <td>Pet:</td>
           <td>
-              <select [(ngModel)]="selectedPet" class="rounded">
+              <select [(ngModel)]="selectedPet" (change)="holdPet()"class="rounded">
               <option *ngFor="let p of pets" [ngValue]="p">
                 {{ p.name }}
               </option>

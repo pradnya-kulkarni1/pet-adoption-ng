@@ -1,2 +1,76 @@
 <app-menu></app-menu>
 
+<div class = "adopt-final">
+    <section class ="heading">
+        <span [style.color]='"brown"' class="page title font-weight-bold">{{title}}</span>
+    </section>
+    <table class="table able-sm table-striped">
+        <thead>
+            <tr>
+            <th>Id</th>
+            <th>Customer</th>
+            <th>User</th>
+            <th>Pet</th>
+            <th>Breed</th>
+            <th>Status</th>
+            <th>Submitted Date</th>
+            <th>PaperWork Completed</th>
+            <th>Payment Received</th>
+            <th>Done</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let adoption of adoptions">
+                <td>{{adoption.id}}</td>
+                <td>{{adoption.customer.firstname +" "+ adoption.customer.lastname}}</td>
+                <td>{{adoption.user.firstname +" "+adoption.user.lastname}}</td>
+                <td>{{adoption.pet.name}}</td>
+                <td>{{adoption.pet.breed.name}}</td>
+                <td>{{adoption.status}}</td>
+                <td>{{adoption.submittedDate| date:'MM/dd/yyyy'}}</td>
+                <td>
+                    <input [(ngModel)]="adoption.paperWorkCompleted" class="rounded" type="checkbox" style="text-align:center" />
+                    </td>
+                    <td>
+                    <input [(ngModel)]="adoption.paymentRecieved" class ="rounded" type = "checkbox" style="text-align:center"/>
+                    </td>
+                    <td>
+                        <span><button (click)="done(adoption.id)" 
+                            class="available"[disabled]="!adoption.paperWorkCompleted || !adoption.paymentRecieved">Done</button></span>
+                    </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="adopted-pet">
+    <div *ngIf="adoptedPet">
+    <table class="table able-sm table-striped">
+        <thead>
+            <tr>
+            <th>Id</th>
+            <th>Customer</th>
+            <th>User</th>
+            <th>Pet</th>
+            <th>Breed</th>
+            <th>Status</th>
+            <th>Submitted Date</th>
+            <th>Adoption Completed Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{adopted.id}}</td>
+                <td>{{adopted.customer.firstname +" "+ adopted.customer.lastname}}</td>
+                <td>{{adopted.user.firstname +" "+adopted.user.lastname}}</td>
+                <td>{{adopted.pet.name}}</td>
+                <td>{{adopted.pet.breed.name}}</td>
+                <td>{{adopted.status}}</td>
+                <td>{{adopted.submittedDate| date:'MM/dd/yyyy'}}</td>
+                <td>{{adopted.adoptionCompletedDate| date:'MM/dd/yyyy'}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+
+

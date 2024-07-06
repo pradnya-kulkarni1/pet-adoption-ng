@@ -31,7 +31,8 @@
                 <input [(ngModel)]="adoption.referenceCheck" class ="rounded" type = "checkbox" style="text-align:center"/>
                 </td>
                 <td>
-                    <span><button routerLink="/available-pet" class="available">Available Pets</button></span>
+                    <span><button routerLink="/available-pet/{{adoption.id}}" 
+                        class="available"[disabled]="!adoption.backgroundCheck || !adoption.referenceCheck">Available Pets</button></span>
                 </td>
             </tr>
         </tbody>

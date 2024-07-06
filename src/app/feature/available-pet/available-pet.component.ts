@@ -6,6 +6,9 @@ import { SpeciesService } from '../../services/species.service';
 import { Species } from '../../model/species';
 import { BreedService } from '../../services/breed.service';
 import { Breed } from '../../model/breed';
+import { Adoption } from '../../model/adoption';
+import { AdoptionService } from '../../services/adoption.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-available-pet',
@@ -16,7 +19,6 @@ export class AvailablePetComponent implements OnInit{
   title: string = "Available-Pets";
   pets: Pet[] = [];
   pet: Pet = new Pet();
-  femalePets: Pet[] = [];
   speciess: Species[] = [];
   breeds: Breed[] = [];
   selectedSpecies: Species = new Species();
@@ -26,13 +28,30 @@ export class AvailablePetComponent implements OnInit{
   breedId?: number = undefined;
   petId?: number = undefined;
   whenSelected: boolean = false;
+  adoption: Adoption = new Adoption();
+  adoptionId: number = 0; 
 
   constructor(private petSvc: PetService,
     private speciesSvc: SpeciesService,
     private breedSvc: BreedService,
+    private adoptionSvc: AdoptionService,
+    private route: ActivatedRoute,
     private sysSvc: SystemService){}
 
   ngOnInit(): void{
+    this.sysSvc.checkLogin();
+    this.route.params.subscribe({
+      next: (parms) => {
+        this.adoptionId = parms['id'];
+        this.adoptionSvc.getAdoptionById(this.adoptionId).subscribe({
+          next:(resp)=>{
+            this.adoption = resp;
+          },
+          error:(err)=>{
+            console.log(err);
+          },
+          complete:()=>{}
+        });
     console.log('OnInit');
     this.speciesSvc.getAllSpeciess().subscribe({
 
@@ -44,7 +63,13 @@ export class AvailablePetComponent implements OnInit{
       },
       complete:()=>{}
     });
-
+  },
+  error: (err) => {
+    console.log('Error getting id from url: ', err);
+  },
+  complete: () => {},
+    
+  });
   
   }
   
@@ -92,7 +117,24 @@ console.log('getBreeds for selectedSpeices: '+this.selectedSpecies.name);
         console.log(err);
       },
       complete:()=> {}
-    })
+    });
 
+  }
+  holdPet(): void{
+    this.adoption.pet.id = this.selectedPet.id;
+    
+    this.adoptionSvc.holdAdoption(this.adoptionId).subscribe({
+      next:(resp)=>{
+        this.adoption = resp;
+        console.log('status: ',this.adoption.status);
+      },
+      error:(err)=>{
+        console.log(err);
+      },
+      complete:()=>{}
+    });
+
+    console.log('petId :',this.adoption.pet.id);
+    console.log('adoption request on hold',this.adoption.customer, this.adoption.status);
   }
 }
