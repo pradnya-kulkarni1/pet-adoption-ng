@@ -20,6 +20,8 @@ p.b {
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(247, 135, 135, 0.723);
+  text-align:center;
+  text-indent:5px;
 }
 table, th, td {
   border: 1px solid #ef2ae5;

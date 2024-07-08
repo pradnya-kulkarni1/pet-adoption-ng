@@ -15,6 +15,10 @@ export class AdoptionService {
   getAllAdoptions(): Observable<Adoption[]> {
     return this.http.get(URL+'/') as Observable<Adoption[]>;
   }
+
+  getAllAdoptedAdoptions(): Observable<Adoption[]>{
+    return this.http.get(URL+'/adopted') as Observable<Adoption[]>;
+  }
   
   getAdoptionById(id:number):Observable<Adoption> {
     return this.http.get(URL + '/'+id) as Observable<Adoption>;

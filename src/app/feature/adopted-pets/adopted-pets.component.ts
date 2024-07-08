@@ -1,26 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { AdoptionService } from '../../services/adoption.service';
 import { Adoption } from '../../model/adoption';
 import { SystemService } from '../../services/system.service';
+import { AdoptionService } from '../../services/adoption.service';
 
 @Component({
-  selector: 'app-adopt',
-  templateUrl: './adopt.component.html',
-  styleUrl: './adopt.component.css'
+  selector: 'app-adopted-pets',
+  templateUrl: './adopted-pets.component.html',
+  styleUrl: './adopted-pets.component.css'
 })
-export class AdoptComponent implements OnInit{
+export class AdoptedPetsComponent implements OnInit{
+  title: string = 'Adopted Pets List';
   adoptions: Adoption[] = [];
-  title: string = "Ready to Adopt";
 
-  constructor(
-    private adoptSvc: AdoptionService,
+  constructor(private adoptSvc: AdoptionService,
     private sysSvc: SystemService
   ){}
 
-  ngOnInit(): void{
-
+  ngOnInit():void { 
     this.sysSvc.checkLogin();
-    this.adoptSvc.getAllAdoptionForApprove().subscribe({
+    this.adoptSvc.getAllAdoptedAdoptions().subscribe({
       next:(parms)=>{
         this.adoptions = parms;
       },
@@ -31,5 +29,6 @@ export class AdoptComponent implements OnInit{
     });
     
   }
+  }
 
-}
+

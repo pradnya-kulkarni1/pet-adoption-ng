@@ -29,6 +29,7 @@ import { AdoptComponent } from './adoption/adopt/adopt.component';
 import { AdoptionApproveComponent } from './adoption/adoption-approve/adoption-approve.component';
 import { AvailablePetComponent } from './feature/available-pet/available-pet.component';
 import { AdoptionFinalComponent } from './feature/adoption-final/adoption-final.component';
+import { AdoptedPetsComponent } from './feature/adopted-pets/adopted-pets.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/home',pathMatch:'full'},
@@ -61,6 +62,7 @@ const routes: Routes = [
   {path:'adoption/aprove/:id',component: AdoptionApproveComponent},
   {path:'adoption/adopt',component:AdoptComponent},
   {path:'adoption-final',component:AdoptionFinalComponent},
+  {path:'adopted-pets', component:AdoptedPetsComponent},
   {path:'**',component:WelcomeComponent}
 
 ];

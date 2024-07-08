@@ -9,17 +9,18 @@
     <table *ngIf = "pets" class="table table-sm table-striped">
 
     <thead>
-        <tr><th>Id</th><th>Name</th><th>Breed</th><th>Gender</th><th>BirthYear</th><th>BirthMonth</th><th>Available</th><th>Action</th></tr>
+        <tr><th>Pet Details<th>Action</th></tr>
     </thead>
     <tbody>
         <tr *ngFor="let pet of pets">
-            <td>{{pet.id}}</td>
-            <td>{{pet.name}}</td>
-            <td>{{pet.breed.name}}</td>
-            <td>{{pet.gender}}</td>
-            <td>{{pet.birthYear}}</td>
-            <td>{{pet.birthMonth}}</td>
-            <td>{{pet.available}}</td>
+            <td>{{pet.id}}
+            {{pet.name}}
+            {{pet.breed.name}}
+            {{pet.gender}}
+            {{pet.birthYear}}
+            {{pet.birthMonth}}
+            {{pet.available}}
+            <img width="250" height="200" src="{{pet.photoPath}}">
             <td>
                 <a routerLink="/pet/details/{{ pet.id }}">
                   <img
@@ -44,10 +45,3 @@
     </table>
 </div>
 
-
-<img width="200" height = "200" src ="assets/dog-cat.jpg"/>
-<img width="200" height = "200" src ="assets/rabbit.jpg"/>
-<img width="200" height = "200" src ="assets/cute-puppies.jpg"/>
-<img width="200" height = "200" src ="assets/golden1.jpg"/>
-<img width="200" height = "200" src ="assets/golden2.jpg"/>
-<img width="200" height = "200" src ="assets/birdgreen.jpg"/>

@@ -24,6 +24,7 @@ export class MenuComponent implements OnInit {
     this.menuItems.push(new MenuItem("Adoption Request","/adoption/request","Adoption Request"));
     this.menuItems.push(new MenuItem("Review","/review/review","Review"));
     this.menuItems.push(new MenuItem("Adopt","/adoption/adopt","Adopt"));
+    this.menuItems.push(new MenuItem("Adopted Pets","/adopted-pets","Adopted Pets List"));
 
   this.systemSvc.checkLogin;
   if (this.systemSvc.loggedInUser.id ==0){

@@ -36,6 +36,7 @@ import { AdoptComponent } from './adoption/adopt/adopt.component';
 import { AdoptionApproveComponent } from './adoption/adoption-approve/adoption-approve.component';
 import { AvailablePetComponent } from './feature/available-pet/available-pet.component';
 import { AdoptionFinalComponent } from './feature/adoption-final/adoption-final.component';
+import { AdoptedPetsComponent } from './feature/adopted-pets/adopted-pets.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { AdoptionFinalComponent } from './feature/adoption-final/adoption-final.
     AdoptComponent,
     AdoptionApproveComponent,
     AvailablePetComponent,
-    AdoptionFinalComponent
+    AdoptionFinalComponent,
+    AdoptedPetsComponent
   ],
   imports: [
     BrowserModule,

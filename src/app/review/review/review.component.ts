@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Adoption } from '../../model/adoption';
 import { AdoptionService } from '../../services/adoption.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { SystemService } from '../../services/system.service';
 
 
 @Component({
@@ -19,10 +20,13 @@ id: number = 0;
 
 constructor(private adoptSvc: AdoptionService,
   private router: Router,
-  private route: ActivatedRoute
+  private route: ActivatedRoute,
+  private sysSvc: SystemService
 ){}
 
 ngOnInit(): void{
+  
+  this.sysSvc.checkLogin();
 
   this.adoptSvc.getAllAdoptions().subscribe({
     next:(parms)=>{
