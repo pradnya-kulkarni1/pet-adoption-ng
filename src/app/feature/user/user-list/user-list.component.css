@@ -26,3 +26,14 @@ table, th, td {
   border: 1px solid #ef6d54;
   border-inline-end-color: brown;
 }
+.card{
+  font-size: 1.3rem;
+    text-transform:uppercase;
+    margin:10px;
+    align-items:center;
+    width:20%;
+    box-sizing: border-box;
+    background: #fff;
+    box-shadow:0 0 15px rgba(0, 0,0,0.4);
+    padding:10px;
+}

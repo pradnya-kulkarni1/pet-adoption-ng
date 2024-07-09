@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Pet } from '../../../model/pet';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PetService } from '../../../services/pet.service';
+import { SystemService } from '../../../services/system.service';
 
 @Component({
   selector: 'app-pet-details',
@@ -13,10 +14,12 @@ export class PetDetailsComponent implements OnInit{
   pet: Pet = new Pet();
   petId : number = 0;
   message?: string = undefined;
+  isUser: boolean = false;
 
   constructor(private petSvc:PetService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private sysSvc: SystemService
   ){}
 
   ngOnInit(): void{
@@ -42,6 +45,7 @@ complete:() => {}
   }
 
   delete(){
+    this.sysSvc.checkLogin();
     this.petSvc.deletePet(this.petId).subscribe({
       next:(resp) => {
         if (resp == false){

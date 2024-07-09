@@ -40,7 +40,13 @@
             <td>
               <input [(ngModel)]="pet.available" class="rounded" type="checkbox" disabled/>
             </td>
-          </tr>          
+          </tr>
+          <tr>
+            <td>Photo:</td>
+            <td>
+              <img height="200" width="250" src="{{pet.photoPath}}"/>
+            </td>
+          </tr>             
         </table>
       </main>
       <span >
@@ -50,10 +56,3 @@
       <p *ngIf="message">{{ message }}</p>
     </div>
   </div>
-
-<img width="200" height = "200" src ="assets/dog-cat.jpg"/>
-<img width="200" height = "200" src ="assets/rabbit.jpg"/>
-<img width="200" height = "200" src ="assets/cute-puppies.jpg"/>
-<img width="200" height = "200" src ="assets/golden1.jpg"/>
-<img width="200" height = "200" src ="assets/golden2.jpg"/>
-<img width="200" height = "200" src ="assets/birdgreen.jpg"/>

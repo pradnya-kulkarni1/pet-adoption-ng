@@ -13,13 +13,10 @@
     </thead>
     <tbody>
         <tr *ngFor="let pet of pets">
-            <td>{{pet.id}}
+            <td>
             {{pet.name}}
             {{pet.breed.name}}
             {{pet.gender}}
-            {{pet.birthYear}}
-            {{pet.birthMonth}}
-            {{pet.available}}
             <img width="250" height="200" src="{{pet.photoPath}}">
             <td>
                 <a routerLink="/pet/details/{{ pet.id }}">
@@ -27,7 +24,7 @@
                     width="20"
                     height="20"
                     src="assets/details.png"
-                    title="Species Details"
+                    title="Pet Details"
                   />
                 </a>
                 <a routerLink="/pet/edit/{{ pet.id }}">
@@ -35,7 +32,7 @@
                     width="20"
                     height="20"
                     src="assets/pencil-icon.png"
-                    title="Edit Specie"
+                    title="Edit Pet"
                   />
                 </a>
               </td> 
