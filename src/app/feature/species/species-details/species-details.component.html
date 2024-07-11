@@ -42,12 +42,12 @@
           </tr>
         </table>
     </main>
-    <span>
+    <span *ngIf="isUser">
         <button routerLink="/species/edit/{{ species.id }}"
           class="btn btn-sm btn-warning"
           >Edit</button>
         </span>
-      <span>
+      <span *ngIf="isUser">
         <button (click)="delete()" class="btn btn-sm btn-danger">
           Delete
         </button>

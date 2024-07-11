@@ -1,22 +1,44 @@
 
 
-h1 {
+navbar {
 	border:2px;
     border-color:brown;
-	color:rgb(69, 229, 21);
+	text-decoration-color:rgb(20, 199, 44);
 	padding: 10px;
     width: 100%;
-    margin: 50px auto;
-    background: rgba(249, 249, 249, 0.75); /* Semi-transparent white background */
+    margin:auto;
+    background: rgba(246, 165, 165, 0.75); /* Semi-transparent white background */
     padding: 20px;
     border-radius: 10px;
-    
-    
+    align-items:center;
+    text-decoration:double;
+    display:contents;
+    gap:30px;
+    text-shadow:rgba(246, 165, 165,0.75);
+}
+.navbar img{
+  margin-right:20px;
+
+}
+
+.navbar a{
+  margin-left:20px;
+  margin-right:100px;
+  
+}
+.ml-auto{
+  margin-left:auto;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.d-inline-block{
+  align-items:center;
 }
 .row {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px; /* Adjust the gap between cards */
+    gap: 5px; /* Adjust the gap between cards */
     justify-content: flex-start;
   }
   
@@ -32,4 +54,43 @@ h1 {
     padding: 16px;
     align-items: center;
     background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0,0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  .card:hover{
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .navbar .navbar-brand{
+    margin-right:auto;
+  }
+  .breed-select{
+    padding:10px;
+    font-size:16px;
+    width:200px;
+    color:green;
+  }
+  .footer{
+    background-color:rgb(217, 235, 241);
+    padding:20px;
+    text-align:center;
+  }
+
+  .footer-content{
+    display: flex;
+    justify-content:space-around;
+    align-items:flex-start;
+    flex-wrap:wrap;
+    color:blue;
+
+  }
+
+  .footer-section{
+    text-align:center;
+    margin-top:10px;
+  }
+  .bottom-picture{
+    text-align: center;
+    border:5px;
+    border-color:blue;
   }

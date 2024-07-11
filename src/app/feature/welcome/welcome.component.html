@@ -1,5 +1,16 @@
 <app-menu></app-menu>
-<h1><img height="50" width="50" src="assets/pow.png"> Pet Home</h1>
+<nav class="navbar navbar-expand-lg"> 
+<img height="50" width="50" src="assets/pow.png" alt="Pet Home Logo">
+<div class="navbar-brand"> Pet Home</div>
+  <a href="https://www.onehealth.org/blog/tips-for-choosing-the-right-pet-for-your-home-and-lifestyle">Tips for choosing right pet</a> 
+    <div>Breed:</div>
+
+    <select [(ngModel)]="selectedBreed" class="breed-select">
+    <option *ngFor="let b of breeds" [ngValue]="b">
+      {{ b.name }}
+    </option>
+  </select>
+</nav>
 <div class="row">
   <div *ngFor="let pet of pets" class="col">
        <div class="card">
@@ -9,11 +20,11 @@
       <div>
           <a routerLink="/pet/details/{{ pet.id }}">
             <img
-              width="20"
-              height="20"
+              width="30"
+              height="30"
               src="assets/details.png"
               title="Pet Details"
-            />
+            /> More Details
           </a>
         </div>
         </div>
@@ -21,5 +32,25 @@
       </div>
 
 </div>
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h4>Privacy Policy</h4>
+      <p>This is a project for learning and exploring, all the data is imaginary...</p>
+    </div>
+    <div class="footer-section">
+      <h4>Copyright</h4>
+      <p>&#169; 2024 Pet Home. All rights reserved.</p>
+    </div>
+    <div class="footer-section">
+      <h4>Contact</h4>
+      <p>Email: contact&#64;pethome.com</p>
+      <p>Phone: (123) 456-7890</p>
+    </div>
+  </div>
+  <div class="bottom-picture">
+  <img height="300" width="600" src="assets/sleeping.jpg">
+</div>
+</footer>
 
 

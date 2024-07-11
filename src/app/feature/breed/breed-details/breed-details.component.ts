@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Breed } from '../../../model/breed';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BreedService } from '../../../services/breed.service';
+import { SystemService } from '../../../services/system.service';
 
 @Component({
   selector: 'app-breed-details',
@@ -13,12 +14,20 @@ export class BreedDetailsComponent implements OnInit {
   breed: Breed = new Breed();
   breedId: number = 0;
   message?: string = undefined;
+  isUser:boolean=false;
+  userId: number=0;
+
   constructor(private breedSvc: BreedService,
     private router: Router,
+    private systemSvc:SystemService,
     private route: ActivatedRoute){}
 
   
   ngOnInit(): void {
+    this.userId=this.systemSvc.loggedInUser.id;
+    if (this.userId ==0){
+      this.isUser = false;
+     } else if(this.userId !=0) this.isUser=true;
     this.route.params.subscribe({
       next: (parms) => {
         this.breedId = parms['id'];

@@ -12,12 +12,18 @@ import { Species } from '../../../model/species';
 export class BreedListComponent implements OnInit {
   title: string = "Breed-List";
   breeds?: Breed[] = undefined;
+  userId:number=0;
+  isUser:boolean=false;
   //species: Species = new Species();
 
   constructor(private breedSvc:BreedService,
     private sysSvc: SystemService){}
 
   ngOnInit(): void{
+    this.userId=this.sysSvc.loggedInUser.id;
+    if (this.userId ==0){
+      this.isUser = false;
+     } else if(this.userId !=0) this.isUser=true;
 
     this.breedSvc.getAllBreeds().subscribe({
       next:(resp)=> {

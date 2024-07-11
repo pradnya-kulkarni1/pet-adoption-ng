@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Species } from '../../../model/species';
 import { SpeciesService } from '../../../services/species.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { SystemService } from '../../../services/system.service';
 
 @Component({
   selector: 'app-species-details',
@@ -13,11 +14,18 @@ export class SpeciesDetailsComponent implements OnInit {
   species: Species = new Species();
   message?: string = undefined;
   title: string = "Species - Detail";
+  isUser:boolean=false;
+  userId:number=0;
   
 
   constructor(private route: ActivatedRoute, private speciesSvc: SpeciesService,
+    private systemSvc: SystemService,
     private router: Router){}
   ngOnInit(): void{
+    this.userId=this.systemSvc.loggedInUser.id;
+    if (this.userId ==0){
+      this.isUser = false;
+     } else if(this.userId !=0) this.isUser=true;
     this.route.params.subscribe({
       next: (parms) => {
         this.speciesId = parms['id'];

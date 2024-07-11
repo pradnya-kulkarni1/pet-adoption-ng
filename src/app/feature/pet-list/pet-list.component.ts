@@ -11,12 +11,19 @@ import { PetService } from '../../services/pet.service';
 export class PetListComponent implements OnInit{
   title: string = "Pet-List";
   pets?: Pet[] = undefined;
+  userId:number=0;
+  isUser:boolean=false;
 
   constructor(private petSvc: PetService,
     private sysSvc: SystemService){}
 
 
   ngOnInit(): void{
+    this.userId=this.sysSvc.loggedInUser.id;
+    if (this.userId ==0){
+      this.isUser = false;
+     } else if(this.userId !=0) this.isUser=true;
+console.log('isUser',this.isUser)
     this.petSvc.getAllPets().subscribe({
       next:(resp)=> {
         this.pets = resp;

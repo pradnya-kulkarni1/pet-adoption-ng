@@ -2,7 +2,7 @@
 <div class = "species-list">
   <section [style.color]='"brown"' class="heading">
     <h4>Species List</h4>
-        <a routerLink="/species/create">Add New
+        <a *ngIf="isUser" routerLink="/species/create">Add New
           <img width="20" height="20" src="assets/add-icon.png" title="Add New" />
         </a>
         </section>
@@ -24,7 +24,7 @@
                     title="Species Details"
                   />
                 </a>
-                <a routerLink="/species/edit/{{ s.id }}">
+                <a *ngIf="isUser" routerLink="/species/edit/{{ s.id }}">
                   <img
                     width="20"
                     height="20"

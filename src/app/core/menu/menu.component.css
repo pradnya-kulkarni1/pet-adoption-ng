@@ -1,6 +1,6 @@
 nav {
 	width:100%;
-	background-color: rgba(247, 236, 151, 0.75);
+	background-color:rgb(217, 235, 241);
 	padding: 10px 0;
 
 }
@@ -14,14 +14,18 @@ li {
 	font-size: 20px;
 }
 a {
-	color: rgb(245, 73, 73);
+	color: rgb(92, 76, 236);
 	text-decoration:midnightblue;
 	padding: 10px;
 	font-family: Tahoma;
 }
 
 a:hover {
-	background-color: rgb(143, 143, 247);
+	background-color: rgb(160, 247, 143);
+}
+
+li a.active{
+	color:rgb(160, 247, 143);
 }
 
 img {

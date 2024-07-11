@@ -2,7 +2,7 @@
 <div  class="pet-list">
     <section [style.color]='"brown"' class="heading">
 <h4>Pet List</h4>
-        <a routerLink = "/pet/create">Add new
+        <a *ngIf="isUser" routerLink = "/pet/create">Add new
             <img width="20" height="20" src="assets/add-icon.png" title="Add new"/>
         </a>
     </section>
@@ -21,7 +21,7 @@
                     title="Pet Details"
                   />
                 </a>
-                <a routerLink="/pet/edit/{{ pet.id }}">
+                <a *ngIf="isUser" routerLink="/pet/edit/{{ pet.id }}">
                   <img
                     width="20"
                     height="20"

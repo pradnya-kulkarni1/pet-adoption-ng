@@ -31,13 +31,13 @@
         </table>
     </main>
     <span>
-      <span
+      <span *ngIf="isUser"
         ><button routerLink="/breed/edit/{{ breed.id }}"
           class="btn btn-sm btn-warning"
           >Edit</button
         ></span
       >
-      <span>
+      <span *ngIf="isUser">
         |
         <button (click)="delete()" class="btn btn-sm btn-danger">
           Delete
