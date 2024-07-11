@@ -1,6 +1,8 @@
 <app-menu></app-menu>
 <div  class="species-detail">
-    <span [style.color]='"brown"' class="component-title">{{ title }}</span>
+  <section [style.color]='"brown"' class="heading">
+    <h4>Species Details</h4>
+    </section>
     <p *ngIf="!species">Loading...</p>
     <div *ngIf="species">
       <main class="single">
@@ -54,9 +56,3 @@
   </div>
 </div>
 
-<img width="200" height = "200" src ="assets/dog-cat.jpg"/>
-<img width="200" height = "200" src ="assets/rabbit.jpg"/>
-<img width="200" height = "200" src ="assets/cute-puppies.jpg"/>
-<img width="200" height = "200" src ="assets/golden1.jpg"/>
-<img width="200" height = "200" src ="assets/golden2.jpg"/>
-<img width="200" height = "200" src ="assets/birdgreen.jpg"/>

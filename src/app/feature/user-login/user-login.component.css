@@ -1,5 +1,5 @@
 tr{
-    background-color: rgba(98, 171, 244, 0.75);
+    background-color: rgba(245, 165, 205, 0.75);
     text-align:center;
   }
   h1{
@@ -8,7 +8,13 @@ tr{
   button:hover {
     background: #d3f182;
      outline:auto;
-    box-shadow: blue;
+    box-shadow: rgb(203, 203, 240);
   }
-  
+  .user-login{
+    color:rgb(75, 18, 220);
+    align-items:center;
+  }
+ .btn{
+box-shadow: 1px;;
+ }
  

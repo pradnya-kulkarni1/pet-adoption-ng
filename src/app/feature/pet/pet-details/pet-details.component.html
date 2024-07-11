@@ -1,10 +1,16 @@
 <app-menu></app-menu>
 <div class="pet-details">
-    <span [style.color]='"brown"' class="component-title">{{ title }}</span>
+    <h4>Pet Details</h4>
     <p *ngIf="!pet">Loading...</p>
     <div *ngIf="pet">
       <main class="single">
         <table class="table table-sm">
+          <tr>
+            <td>Id:</td>
+            <td>
+                <input [(ngModel)] = "pet.id" class = "rounded" type ="text" disabled />
+            </td>
+          </tr>
           <tr>
             <td>Breed:</td>
             <td>
@@ -49,9 +55,9 @@
           </tr>             
         </table>
       </main>
-      <span >
-        <span><button routerLink="/pet/edit/{{pet.id}}" class="btn btn-sm btn-warning">Edit</button></span>
-        <span> | <button (click)="delete()" class="btn btn-sm btn-danger">Delete</button></span>
+      <span>
+        <span *ngIf="isUser"><button routerLink="/pet/edit/{{pet.id}}" class="btn btn-sm btn-warning">Edit</button></span>
+        <span *ngIf="isUser"> | <button (click)="delete()" class="btn btn-sm btn-danger">Delete</button></span>
     </span>
       <p *ngIf="message">{{ message }}</p>
     </div>

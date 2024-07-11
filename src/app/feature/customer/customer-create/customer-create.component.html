@@ -1,6 +1,8 @@
 <app-menu></app-menu>
 <div class="customer-create">
-    <span [style.color]='"brown"' class="component-title">{{ title }}</span>
+  <section [style.color]='"brown"' class="heading">
+    <h4>Customer Create</h4>
+    </section>
     
     <p *ngIf="!customer">Loading...</p>
     <div *ngIf="customer">
@@ -62,10 +64,3 @@
       <p *ngIf="message">{{ message }}</p>
     </div>
   </div>
-
-<img width="200" height = "200" src ="assets/dog-cat.jpg"/>
-<img width="200" height = "200" src ="assets/rabbit.jpg"/>
-<img width="200" height = "200" src ="assets/cute-puppies.jpg"/>
-<img width="200" height = "200" src ="assets/golden1.jpg"/>
-<img width="200" height = "200" src ="assets/golden2.jpg"/>
-<img width="200" height = "200" src ="assets/birdgreen.jpg"/>

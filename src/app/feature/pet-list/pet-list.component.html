@@ -1,24 +1,18 @@
 <app-menu></app-menu>
 <div  class="pet-list">
     <section [style.color]='"brown"' class="heading">
-        <span  class="page-title font-weight-bold font-italic">{{title}}</span>
-        <a routerLink = "/pet/create">
+<h4>Pet List</h4>
+        <a routerLink = "/pet/create">Add new
             <img width="20" height="20" src="assets/add-icon.png" title="Add new"/>
         </a>
     </section>
-    <table *ngIf = "pets" class="table table-sm table-striped">
-
-    <thead>
-        <tr><th>Pet Details<th>Action</th></tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let pet of pets">
-            <td>
-            {{pet.name}}
-            {{pet.breed.name}}
-            {{pet.gender}}
-            <img width="250" height="200" src="{{pet.photoPath}}">
-            <td>
+<div class="row">
+        <div *ngFor="let pet of pets" class="col">
+             <div class="card">
+            <img width="150" height="100" src="{{pet.photoPath}}">
+           <div>{{pet.name}}</div>
+           <div>{{pet.breed.name}}</div> 
+            <div>
                 <a routerLink="/pet/details/{{ pet.id }}">
                   <img
                     width="20"
@@ -35,10 +29,11 @@
                     title="Edit Pet"
                   />
                 </a>
-              </td> 
-        </tr>
-    </tbody>
-
-    </table>
+              </div>
+              </div>
+              
+            </div>
+    
+      </div>
 </div>
 

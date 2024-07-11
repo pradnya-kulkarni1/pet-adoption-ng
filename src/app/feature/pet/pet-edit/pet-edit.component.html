@@ -1,6 +1,8 @@
 <app-menu></app-menu>
 <div class="pet-edit">
-    <span [style.color]='"brown"' class="component-title">{{ title }}</span>
+  <section [style.color]='"brown"' class="heading">
+    <h4>Pet Edit</h4>
+    </section>
     <p *ngIf="!pet">Loading...</p>
     <div *ngIf="pet">
       <main class="single">
@@ -54,15 +56,8 @@
         </table>
       </main>
       <span >
-        <span> <button (click)="save()" class="btn btn-sm btn-sm">Save</button></span>
+        <span> <button (click)="save()" class="btn btn-sm btn-primary">Save</button></span>
     </span>
       <p *ngIf="message">{{ message }}</p>
     </div>
   </div>
-
-<img width="200" height = "200" src ="assets/dog-cat.jpg"/>
-<img width="200" height = "200" src ="assets/rabbit.jpg"/>
-<img width="200" height = "200" src ="assets/cute-puppies.jpg"/>
-<img width="200" height = "200" src ="assets/golden1.jpg"/>
-<img width="200" height = "200" src ="assets/golden2.jpg"/>
-<img width="200" height = "200" src ="assets/birdgreen.jpg"/>

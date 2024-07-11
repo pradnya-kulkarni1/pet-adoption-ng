@@ -1,77 +1,25 @@
 <app-menu></app-menu>
 <h1><img height="50" width="50" src="assets/pow.png"> Pet Home</h1>
+<div class="row">
+  <div *ngFor="let pet of pets" class="col">
+       <div class="card">
+      <img width="150" height="100" src="{{pet.photoPath}}">
+     <div>{{pet.name}}</div>
+     <div>{{pet.breed.name}}</div> 
+      <div>
+          <a routerLink="/pet/details/{{ pet.id }}">
+            <img
+              width="20"
+              height="20"
+              src="assets/details.png"
+              title="Pet Details"
+            />
+          </a>
+        </div>
+        </div>
+        
+      </div>
 
-<div class="container">
-  <div class="row">
-    <div class="card">
-      <img height="200" width="250" src="assets/hira.jpg" alt="">
-      <h4>Hira</h4>
-      <a routerLink="/pet/details/14" class="btn-sm">Read More</a>
-    </div>
-    <div class="card">
-      <img height="200" width="250" src="assets/max.jpg" alt="">
-      <h4>MAX</h4>
-      <a routerLink="/pet/details/4" class="btn-sm">Read More</a>
-    </div>
-    <div class="card">
-      <img height="200" width="250" src="assets/milo.jpg" alt="">
-      <h4>Milo</h4>
-      <a routerLink="/pet/details/5" class="btn-sm">Read More</a>
-    </div>
-  <div class="card">
-    <img height="200" width="250" src="assets/buddy.jpg" alt="">
-    <h4>Buddy</h4>
-    <a routerLink="/pet/details/1" class="btn-sm">Read More</a>
-  </div>
-  <div class="card">
-    <img height="200" width="250" src="assets/luna.jpg" alt="">
-    <h4>Luna</h4>
-    <a routerLink="/pet/details/2" class="btn-sm">Read More</a>
-  </div>
-  <div class="card">
-    <img height="200" width="250" src="assets/simba.jpg" alt="">
-    <h4>Simba</h4>
-    <a routerLink="/pet/details/6" class="btn-sm">Read More</a>
-  </div>
-  <div class="card">
-    <img height="200" width="250" src="assets/snowball.jpg" alt="">
-    <h4>Snowball</h4>
-    <a routerLink="/pet/details/7" class="btn-sm">Read More</a>
-  </div>
-  <div class="card">
-    <img height="200" width="250" src="assets/rocky.jpg" alt="">
-    <h4>Rocky</h4>
-    <a routerLink="/pet/details/8" class="btn-sm">Read More</a>
-  </div>
-  <div class="card">
-    <img height="200" width="250" src="assets/ruby.jpg" alt="">
-    <h4>Ruby</h4>
-    <a routerLink="/pet/details/9" class="btn-sm">Read More</a>
-  </div>
-  <div class="card">
-    <img height="200" width="250" src="assets/charly.jpg" alt="">
-    <h4>Charlie</h4>
-    <a routerLink="/pet/details/10" class="btn-sm">Read More</a>
-  </div>
-  <div class="card">
-    <img height="200" width="250" src="assets/sparky.jpg" alt="">
-    <h4>Sparky</h4>
-    <a routerLink="/pet/details/13" class="btn-sm">Read More</a>
-  </div>
-  <div class="card">
-    <img height="200" width="250" src="assets/Mithu.jpg" alt="">
-    <h4>Mithu</h4>
-    <a routerLink="/pet/details/15" class="btn-sm">Read More</a>
-  </div>
-  <div class="card">
-    <img height="200" width="250" src="assets/sasula.jpeg" alt="">
-    <h4>Sasula</h4>
-    <a routerLink="/pet/details/16" class="btn-sm">Read More</a>
-  </div>
-  <div class="card">
-    <img height="200" width="250" src="assets/victor.jpg" alt="">
-    <h4>Victor</h4>
-    <a routerLink="/pet/details/17" class="btn-sm">Read More</a>
-  </div>
 </div>
-</div>
+
+

@@ -15,6 +15,7 @@ export class PetDetailsComponent implements OnInit{
   petId : number = 0;
   message?: string = undefined;
   isUser: boolean = false;
+  userId: number = 0;
 
   constructor(private petSvc:PetService,
     private router: Router,
@@ -23,6 +24,11 @@ export class PetDetailsComponent implements OnInit{
   ){}
 
   ngOnInit(): void{
+    this.userId=this.sysSvc.loggedInUser.id;
+    if (this.userId ==0){
+      this.isUser = false;
+     } else if(this.userId !=0) this.isUser=true;
+console.log('isUser',this.isUser)
     this.route.params.subscribe({
       next:(parms)=>{
       this.petId = parms['id'];
@@ -46,6 +52,7 @@ complete:() => {}
 
   delete(){
     this.sysSvc.checkLogin();
+    
     this.petSvc.deletePet(this.petId).subscribe({
       next:(resp) => {
         if (resp == false){

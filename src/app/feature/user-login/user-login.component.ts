@@ -25,7 +25,7 @@ export class UserLoginComponent implements OnInit {
 
     this.systemSvc.loggedInUser = new User();
     this.userLogin.email = "pradnya@abcd.com";
-    this.userLogin.password = "topsecret";
+    this.userLogin.password = "PAssworD";
   }
 
   login(){
