@@ -24,12 +24,9 @@ export class AdoptionService {
     return this.http.get(URL + '/'+id) as Observable<Adoption>;
   }
 
-  getAllAdoptionForApprove():Observable<Adoption[]> {
-    return this.http.get(URL + '/approve') as Observable<Adoption[]>;
-  }
-  
-  getAllAdoptionsOnhold():Observable<Adoption[]>{
-    return this.http.get(URL+'/onhold') as Observable<Adoption[]>;
+
+  getAllAdoptionsOnhold(id:number):Observable<Adoption[]>{
+    return this.http.get(URL+'/getadoptionsonhold'+id) as Observable<Adoption[]>;
   }
   createAdoption( Adoption:Adoption): Observable<Adoption>{
     return this.http.post(URL, Adoption) as Observable<Adoption>;
@@ -47,17 +44,10 @@ export class AdoptionService {
     return this.http.delete(URL+"/"+id) as Observable<boolean>;
   }
 
-  approveAdoption(id: number): Observable<Adoption>{
-    return this.http.post(URL+'/approve/'+id,'') as Observable<Adoption>;
-  }
-  holdAdoption(id: number): Observable<Adoption>{
-    return this.http.post(URL+'/hold/'+id,'') as Observable<Adoption>;
-  }
+  
   completeAdoption(id: number): Observable<Adoption>{
     return this.http.post(URL+'/adopt/'+id,'') as Observable<Adoption>;
   }
-  rejectAdoption(id: number, rejectionReason:string): Observable<Adoption>{
-    return this.http.post(URL + '/reject/' + id,  rejectionReason) as Observable<Adoption>;
-  }
+  
 
 }
