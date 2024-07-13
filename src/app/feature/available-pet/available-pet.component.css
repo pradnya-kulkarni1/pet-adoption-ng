@@ -25,11 +25,22 @@ table, th, td {
   border: 1px solid #ef2ae5;
   border-inline-end-color: brown;
 }
-.customer {
-  width: 50%;
-  margin: 50px auto;
-  background: rgba(216, 245, 233, 0.75); /* Semi-transparent white background */
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(247, 135, 135, 0.723);
+
+.navbar a{
+  margin-left:20px;
+  margin-right:100px;
+  
+}
+.center-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight:bold;
+  font-family:'Lucida Sans';
+}
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 25px; /* Adjust margin as needed */
 }

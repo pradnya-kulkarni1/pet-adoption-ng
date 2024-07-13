@@ -12,6 +12,8 @@ import { AdoptReferenceService } from '../../../services/adopt-reference.service
 import { AdoptReference } from '../../../model/adoptReference';
 import { Pet } from '../../../model/pet';
 import { PetService } from '../../../services/pet.service';
+import { AdoptionRequest } from '../../../model/adoptionRequest';
+import { AdoptionRequestService } from '../../../services/adoption-request.service';
 
 @Component({
   selector: 'app-adoption-request',
@@ -20,7 +22,7 @@ import { PetService } from '../../../services/pet.service';
 })
 export class AdoptionRequestComponent implements OnInit{
   title: string = "Adoption - Request";
-  adoption:Adoption = new Adoption();
+  adoptionRequest :AdoptionRequest = new AdoptionRequest();
   user: User = new User();
   customer: Customer = new Customer();
   message?: string = undefined;
@@ -34,21 +36,23 @@ export class AdoptionRequestComponent implements OnInit{
   referenceId?: number = undefined;
   pets: Pet[] = [];
   pet: Pet = new Pet();
+  adoption: Adoption = new Adoption();
  
   
 
-  constructor(private adoptSvc: AdoptionService, private sysSvc: SystemService, 
+  constructor(private adoptReqSvc: AdoptionRequestService, private sysSvc: SystemService, 
     private custSvc: CustomerService,
     private petSvc: PetService,
     private referenceSvc: ReferenceService,
     private adoptReferenceSvc: AdoptReferenceService,
+    private adoptSvc: AdoptionService,
   private router: Router){}
 
   ngOnInit(): void{
 
     this.sysSvc.checkLogin();
-    this.adoption.user = this.sysSvc.loggedInUser;
-    
+    this.adoptionRequest.user = this.sysSvc.loggedInUser;
+ 
     this.custSvc.getAllCustomers().subscribe({
       next:(resp)=>{
         this.customers = resp;
@@ -58,17 +62,7 @@ export class AdoptionRequestComponent implements OnInit{
       },
       complete: ()=> {}
     });
-    this.petSvc.getPetById(1).subscribe({
-      next:(resp)=>{
-        this.pet = resp;
-        this.adoption.pet = this.pet;
-      },
-      error:(err)=>{
-        console.log(err);
-      },
-      complete:()=>{}
-    });
-    
+
     this.referenceSvc.getAllReferences().subscribe({
       next:(resp)=>{
         this.references1 = resp;
@@ -90,11 +84,13 @@ export class AdoptionRequestComponent implements OnInit{
     });
   }
   submit(): void{
-    this.adoptSvc.createAdoption(this.adoption).subscribe({
+    console.log('customer and reference ',this.adoptionRequest.customer, this.adoptionRequest.reference);
+    this.adoptReqSvc.createAdoptionRequest(this.adoptionRequest).subscribe({
       next:(resp)=>{
-        this.adoption = resp;
+        this.adoptionRequest = resp;
+        this.adoption.adoptionRequest.id = this.adoptionRequest.id;
         console.log("Adoption customer and user", this.customer.firstname, this.user.firstname);
-        this.router.navigateByUrl('review/review');
+        this.router.navigateByUrl('/review/review');
       },
       error:(err)=>{
         console.log("Error creating request: ",err);
@@ -102,6 +98,7 @@ export class AdoptionRequestComponent implements OnInit{
       },
       complete:()=>{}
     });
+   
 
   }
 

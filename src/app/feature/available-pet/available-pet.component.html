@@ -1,15 +1,12 @@
 
 <app-menu></app-menu>
-<span>
-  <div class="customer">
-    <tr>
-<td>For Customer</td>
-<td>{{adoption.customer.firstname}}</td>
-<td>User</td>
-<td>{{adoption.user.firstname}}</td>
-</tr>
-  </div>
-</span>
+<nav nav class="navbar navbar-expand-lg center-content">
+<div>For Customer</div>
+<div>{{adoptReq.customer.firstname}}</div>
+<div>{{" "}}</div>
+<div>User</div>
+<div>{{adoptReq.user.firstname}}</div>
+</nav>
 <div class="available-pet">
 <div>
     <h4>Details of Available Pets</h4>
@@ -45,16 +42,18 @@
             <tr>
               <td>Pet:</td>
           <td>
-              <select [(ngModel)]="selectedPet" (change)="holdPet()"class="rounded">
-              <option *ngFor="let p of pets" [ngValue]="p">
+            <div *ngIf="availablePet">
+              <select [(ngModel)]="selectedPet" (change)="select()"class="rounded">
+              <option  *ngFor="let p of pets" [ngValue]="p">
                 {{ p.name }}
               </option>
             </select>
+          </div>
           </td>
       </tr>
       <tr>
         <td>Select</td>
-        <td><span><button (click)="select()"  class="btn btn-sm btn-warning">Select</button></span></td>
+        <td><span><button (click)="holdPet()"  class="btn btn-primary">Select</button></span></td>
       </tr>
       </tbody>
       <div *ngIf="whenSelected">
@@ -78,5 +77,5 @@
           </tbody>
         </table>
       </div>
-      <div><span><button routerLink="/adoption-final"  class="btn btn-sm btn-warning">Adopt</button></span>
+      <div><span><button routerLink="/adoption-final"  class="btn btn-primary">Adopt</button></span>
       </div>

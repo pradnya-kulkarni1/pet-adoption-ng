@@ -72,7 +72,7 @@ import { AdoptedPetsComponent } from './feature/adopted-pets/adopted-pets.compon
     AdoptionApproveComponent,
     AvailablePetComponent,
     AdoptionFinalComponent,
-    AdoptedPetsComponent
+    AdoptedPetsComponent,
   ],
   imports: [
     BrowserModule,

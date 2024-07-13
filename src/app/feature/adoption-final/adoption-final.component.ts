@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AdoptionService } from '../../services/adoption.service';
 import { Adoption } from '../../model/adoption';
 import { SystemService } from '../../services/system.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-adoption-final',
@@ -17,15 +18,18 @@ export class AdoptionFinalComponent implements OnInit{
   paperWorkCompleted: boolean = false;
   paymentRecieved: boolean = false;
   adoptedPet: boolean= false;
+  adoptionId: number = 0;
 
   constructor(
     private adoptionSvc: AdoptionService,
-    private sysSvc: SystemService
+    private sysSvc: SystemService,
+    private route: ActivatedRoute
   ){}
 
   ngOnInit():void{
     this.sysSvc.checkLogin();
-    this.adoptionSvc.getAllAdoptionsOnhold().subscribe({
+
+    this.adoptionSvc.getAllAdoptions().subscribe({
       next:(resp)=>{
         this.adoptions = resp;
       },
@@ -34,8 +38,8 @@ export class AdoptionFinalComponent implements OnInit{
       },
       complete:()=>{}
     });
-    
   }
+  
 
   done(id: number): void{
     this.adoptionSvc.completeAdoption(id).subscribe({

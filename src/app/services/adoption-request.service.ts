@@ -21,7 +21,9 @@ export class AdoptionRequestService {
 getAllAdoptionForApprove():Observable<AdoptionRequest[]> {
   return this.http.get(URL + '/getadoptionsforapprove') as Observable<AdoptionRequest[]>;
 }
-
+getAllAdoptionOnHold():Observable<AdoptionRequest[]> {
+  return this.http.get(URL + '/getadoptionsonhold') as Observable<AdoptionRequest[]>;
+}
 createAdoptionRequest( adoptionRequest:AdoptionRequest): Observable<AdoptionRequest>{
     return this.http.post(URL, adoptionRequest) as Observable<AdoptionRequest>;
 }

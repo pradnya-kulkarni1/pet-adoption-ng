@@ -17,25 +17,64 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let adoption of adoptions">
-                <td>{{adoption.id}}</td>
-                <td>{{adoption.customer.firstname +" "+ adoption.customer.lastname}}</td>
-                <td>{{adoption.user.firstname +" "+adoption.user.lastname}}</td>
-                <td>{{adoption.status}}</td>
-                <td>{{adoption.submittedDate| date:'MM/dd/yyyy'}}</td>
+            <tr *ngFor="let ad of adoptionRequests">
+                <td>{{ad.id}}</td>
+                <td>{{ad.customer.firstname +" "+ ad.customer.lastname}}</td>
+                <td>{{ad.user.firstname +" "+ad.user.lastname}}</td>
+                <td>{{ad.status}}</td>
+                <td>{{ad.submittedDate| date:'MM/dd/yyyy'}}</td>
             
                 <td>
-                <input [(ngModel)]="adoption.backgroundCheck" class="rounded" type="checkbox" style="text-align:center" />
+                <input [(ngModel)]="ad.backgroundCheck" class="rounded" type="checkbox" style="text-align:center" />
                 </td>
                 <td>
-                <input [(ngModel)]="adoption.referenceCheck" class ="rounded" type = "checkbox" style="text-align:center"/>
+                <input [(ngModel)]="ad.referenceCheck" class ="rounded" type = "checkbox" style="text-align:center"/>
                 </td>
                 <td>
-                    <span><button routerLink="/available-pet/{{adoption.id}}" 
-                        class="available"[disabled]="!adoption.backgroundCheck || !adoption.referenceCheck">Available Pets</button></span>
+                    <span><button routerLink="/available-pet/{{ad.id}}" 
+                        class="available"[disabled]="!ad.backgroundCheck || !ad.referenceCheck">Available Pets</button></span>
                 </td>
             </tr>
         </tbody>
     </table>
 </div>
 
+<div class = "hold">
+    <section [style.color]='"brown"' class="heading">
+        <h4>Requests On Hold</h4>
+    </section>
+    <table class="table able-sm table-striped">
+        <thead>
+            <tr>
+            <th>Id</th>
+            <th>Customer</th>
+            <th>User</th>
+            <th>Status</th>
+            <th>Submitted Date</th>
+            <th>BackGround Check</th>
+            <th>Reference Check</th>
+            <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let ad of requestOnHold">
+                <td>{{ad.id}}</td>
+                <td>{{ad.customer.firstname +" "+ ad.customer.lastname}}</td>
+                <td>{{ad.user.firstname +" "+ad.user.lastname}}</td>
+                <td>{{ad.status}}</td>
+                <td>{{ad.submittedDate| date:'MM/dd/yyyy'}}</td>
+            
+                <td>
+                <input [(ngModel)]="ad.backgroundCheck" class="rounded" type="checkbox" style="text-align:center" />
+                </td>
+                <td>
+                <input [(ngModel)]="ad.referenceCheck" class ="rounded" type = "checkbox" style="text-align:center"/>
+                </td>
+                <td>
+                    <span><button routerLink="/adoption-final" 
+                        class="onhold">Adoption Details</button></span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </div>

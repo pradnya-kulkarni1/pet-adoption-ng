@@ -22,12 +22,12 @@
         <tbody>
             <tr *ngFor="let adoption of adoptions">
                 <td>{{adoption.id}}</td>
-                <td>{{adoption.customer.firstname +" "+ adoption.customer.lastname}}</td>
-                <td>{{adoption.user.firstname +" "+adoption.user.lastname}}</td>
+                <td>{{adoption.adoptionRequest.customer.firstname +" "+ adoption.adoptionRequest.customer.lastname}}</td>
+                <td>{{adoption.adoptionRequest.user.firstname +" "+adoption.adoptionRequest.user.lastname}}</td>
                 <td>{{adoption.pet.name}}</td>
                 <td>{{adoption.pet.breed.name}}</td>
-                <td>{{adoption.status}}</td>
-                <td>{{adoption.submittedDate| date:'MM/dd/yyyy'}}</td>
+                <td>{{adoption.adoptionRequest.status}}</td>
+                <td>{{adoption.adoptionRequest.submittedDate| date:'MM/dd/yyyy'}}</td>
                 <td>
                     <input [(ngModel)]="adoption.paperWorkCompleted" class="rounded" type="checkbox" style="text-align:center" />
                     </td>
@@ -60,17 +60,19 @@
         <tbody>
             <tr>
                 <td>{{adopted.id}}</td>
-                <td>{{adopted.customer.firstname +" "+ adopted.customer.lastname}}</td>
-                <td>{{adopted.user.firstname +" "+adopted.user.lastname}}</td>
+                <td>{{adopted.adoptionRequest.customer.firstname +" "+ adopted.adoptionRequest.customer.lastname}}</td>
+                <td>{{adopted.adoptionRequest.user.firstname +" "+adopted.adoptionRequest.user.lastname}}</td>
                 <td>{{adopted.pet.name}}</td>
                 <td>{{adopted.pet.breed.name}}</td>
-                <td>{{adopted.status}}</td>
-                <td>{{adopted.submittedDate| date:'MM/dd/yyyy'}}</td>
+                <td>{{adopted.adoptionRequest.status}}</td>
+                <td>{{adopted.adoptionRequest.submittedDate| date:'MM/dd/yyyy'}}</td>
                 <td>{{adopted.adoptionCompletedDate| date:'MM/dd/yyyy'}}</td>
             </tr>
         </tbody>
     </table>
 </div>
+<div><span><button routerLink="/home"  class="btn btn-primary">Home</button></span>
+      
 </div>
 
 

@@ -7,7 +7,7 @@
     <tr>
         <td>Old Customer :</td>
         <td>
-            <select [(ngModel)] = "adoption.customer" class = "rounded">
+            <select [(ngModel)] = "adoptionRequest.customer" class = "rounded">
                 <option *ngFor="let c of customers"[ngValue] = "c">
                     {{c.email}}
                 </option>
@@ -23,7 +23,7 @@
     <tr>
         <td>Reference 1:</td>
         <td>
-            <select [(ngModel)] = "reference1" class = "rounded">
+            <select [(ngModel)] = "adoptionRequest.reference" class = "rounded">
                 <option *ngFor="let r of references1"[ngValue] = "r">
                     {{r.firstname+ " " +r.lastname}}
                 </option>

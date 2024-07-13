@@ -8,15 +8,15 @@
         </section>
 <table *ngIf="speciess" class = "table table-warning">
     <thead>
-        <tr><th>Id</th><th>Name</th><th>Adoption Fee</th><th>Action</th></tr>
+        <tr><th>Id</th><th>Name</th><th>Adoption Fee</th><th *ngIf="isUser">Action</th></tr>
     </thead>
     <tbody>
         <tr *ngFor="let s of speciess">
             <td>{{s.id}}</td>
             <td>{{s.name}}</td>
-            <td>{{s.adoptionFee}}</td>
+            <td>{{s.adoptionFee| currency}}</td>
             <td>
-                <a routerLink="/species/details/{{ s.id }}">
+                <a *ngIf="isUser" routerLink="/species/details/{{ s.id }}">
                   <img
                     width="20"
                     height="20"

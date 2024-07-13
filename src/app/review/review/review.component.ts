@@ -3,6 +3,8 @@ import { Adoption } from '../../model/adoption';
 import { AdoptionService } from '../../services/adoption.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SystemService } from '../../services/system.service';
+import { AdoptionRequestService } from '../../services/adoption-request.service';
+import { AdoptionRequest } from '../../model/adoptionRequest';
 
 
 @Component({
@@ -12,13 +14,13 @@ import { SystemService } from '../../services/system.service';
 })
 export class ReviewComponent implements OnInit{
 title: string = "Review";
-adoptions: Adoption[] = [];
-adoption: Adoption = new Adoption();
+adoptionRequests: AdoptionRequest[] = [];
+adoptionRequest: AdoptionRequest = new AdoptionRequest();
 message?: string = undefined;
 rejectionReason: string = "";
 id: number = 0;
 
-constructor(private adoptSvc: AdoptionService,
+constructor(private adoptRequestSvc: AdoptionRequestService,
   private router: Router,
   private route: ActivatedRoute,
   private sysSvc: SystemService
@@ -28,9 +30,9 @@ ngOnInit(): void{
   
   this.sysSvc.checkLogin();
 
-  this.adoptSvc.getAllAdoptions().subscribe({
+  this.adoptRequestSvc.getAllAdoptionRequests().subscribe({
     next:(parms)=>{
-      this.adoptions = parms;
+      this.adoptionRequests = parms;
     },
     error:(err)=>{
       console.log('Error getting Adoption Requests: ', err);
@@ -53,15 +55,15 @@ approveOrReject(id:number, rejectionReason:string): void{
 approve(id: number): void {
   console.log('id= ',id);
   this.rejectionReason = "";
-this.adoptSvc.approveAdoption(id).subscribe({
+this.adoptRequestSvc.approveAdoptionRequest(id).subscribe({
  next: (resp) => {
-   this.adoption = resp;
-   if(this.adoption.status=="APPROVED"){
+   this.adoptionRequest = resp;
+   if(this.adoptionRequest.status=="APPROVED"){
    this.rejectionReason ="";}
-   console.log('approved adoption', this.adoption.status);
-   this.adoptSvc.getAllAdoptions().subscribe({
+   console.log('approved adoption', this.adoptionRequest.status);
+   this.adoptRequestSvc.getAllAdoptionRequests().subscribe({
     next:(parms)=>{
-      this.adoptions = parms;
+      this.adoptionRequests = parms;
     },
     error:(err)=>{
       console.log('Error getting Adoption Requests: ', err);
@@ -69,7 +71,7 @@ this.adoptSvc.approveAdoption(id).subscribe({
     complete:()=>{},
   });
   
-   this.router.navigateByUrl('/review/review');
+   this.router.navigateByUrl('/adoption/adopt');
  },
  error: (err) => {
    console.log("Error creating Adoption: ", err);
@@ -80,12 +82,12 @@ this.adoptSvc.approveAdoption(id).subscribe({
 
 }
 reject(id: number, rejectionReason: string): void{
-this.adoptSvc.rejectAdoption(id, rejectionReason).subscribe({
+this.adoptRequestSvc.rejectAdoptionRequest(id, rejectionReason).subscribe({
  next: (resp) => {
-   this.adoption = resp;
-   this.adoptSvc.getAllAdoptions().subscribe({
+   this.adoptionRequest = resp;
+   this.adoptRequestSvc.getAllAdoptionRequests().subscribe({
     next:(parms)=>{
-      this.adoptions = parms;
+      this.adoptionRequests = parms;
     },
     error:(err)=>{
       console.log('Error getting Adoption Requests: ', err);

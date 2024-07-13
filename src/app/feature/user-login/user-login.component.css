@@ -23,7 +23,7 @@ box-shadow: 1px;
  .login-table{
   margin:10px auto;
   padding: 20px 10px;
-  border:1px solid rgb(241,25,223);
+  border:1px solid rgb(29, 3, 27);
   background-color:white;
   box-shadow:0px 4px 8px rgba(0, 0, 0, 0.1);
   border-radius:8px;
@@ -37,4 +37,8 @@ box-shadow: 1px;
   display:flex;
   align-items:center;
   justify-content:center;
+  margin:0;
  }
+.container{
+  text-align:center;
+}
