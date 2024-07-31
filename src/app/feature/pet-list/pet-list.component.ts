@@ -23,7 +23,7 @@ export class PetListComponent implements OnInit{
     if (this.userId ==0){
       this.isUser = false;
      } else if(this.userId !=0) this.isUser=true;
-console.log('isUser',this.isUser)
+
     this.petSvc.getAllPets().subscribe({
       next:(resp)=> {
         this.pets = resp;

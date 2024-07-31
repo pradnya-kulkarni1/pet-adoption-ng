@@ -1,10 +1,15 @@
 <nav>
     <ul width="100%">
-      <a routerLink="/home"> PetHome<img height="30" width="30" src="assets/pow.png" title="home">
-      </a>
+      <li>
+      <a routerLink="/home" routerLinkActive="active"> PetHome<img height="30" width="700" src="assets/pow.jpg" title="home">
+        {{welcomeMsg}}</a>
+    </li>
+    <li>
 <li *ngFor=" let mi of menuItems" title="{{mi.tooltip}}">
-<a routerLink = "{{mi.href}}">{{mi.display}}</a>
-</li>{{welcomeMsg}}
+<a routerLink = "{{mi.href}}" routerLinkActive="active">{{mi.display}}</a>
+</li>
+
+
+
 </ul>
 </nav> 
-

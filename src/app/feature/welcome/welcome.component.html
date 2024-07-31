@@ -1,16 +1,16 @@
 <app-menu></app-menu>
 <nav class="navbar navbar-expand-lg"> 
-<img height="50" width="50" src="assets/pow.png" alt="Pet Home Logo">
-<div class="navbar-brand"> Pet Home</div>
-  <a href="https://www.onehealth.org/blog/tips-for-choosing-the-right-pet-for-your-home-and-lifestyle">Tips for choosing right pet</a> 
-    <div>Breed:</div>
-
-    <select [(ngModel)]="selectedBreed" class="breed-select">
-    <option *ngFor="let b of breeds" [ngValue]="b">
-      {{ b.name }}
-    </option>
-  </select>
-</nav>
+  <img height="50" width="50" src="assets/loveanimals.png" alt="Pet Home Logo">
+  <div class="navbar-brand"> Pet Home</div>
+    <a href="https://www.onehealth.org/blog/tips-for-choosing-the-right-pet-for-your-home-and-lifestyle">Tips for choosing right pet</a> 
+      <div>Breed:</div>
+  
+      <select [(ngModel)]="selectedBreed" class="breed-select">
+      <option *ngFor="let b of breeds" [ngValue]="b">
+        {{ b.name }}
+      </option>
+    </select>
+  </nav>
 <div class="row">
   <div *ngFor="let pet of pets" class="col">
        <div class="card">

@@ -4,6 +4,7 @@ import { Breed } from '../../../model/breed';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { BreedService } from '../../../services/breed.service';
 import { PetService } from '../../../services/pet.service';
+import { SystemService } from '../../../services/system.service';
 
 @Component({
   selector: 'app-pet-edit',
@@ -21,7 +22,8 @@ export class PetEditComponent implements OnInit {
   constructor(private petSvc: PetService,
     private breedSvc: BreedService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private sysSvc:SystemService
   ){}
 
   ngOnInit(): void{
